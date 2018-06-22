@@ -1,0 +1,249 @@
+@import "../../css/common";
+//头部
+html, body {
+  height: 100%;
+  color: #33383D;
+}
+
+h3 {
+  font-weight: 500;
+  font-size: 26rem/@num;
+  padding-bottom: 20rem/@num;
+}
+
+//轮播图
+.banner-container {
+  width: 100%;
+  height: 489rem/@num;
+  position: relative;
+  overflow: hidden;
+  color: white;
+  ul {
+    position: absolute;
+    width: 300%;
+    height: 100%;
+    li {
+      width: 750rem/@num;
+      height: 100%;
+      float: left;
+      position: relative;
+      background: linear-gradient(to right, #88B2DE, #A8D9EA);
+      img {
+        width: 750rem/@num;
+        height: 489rem/@num;
+      }
+      //水平进度
+      .box {
+        position: absolute;
+        width: 260rem/@num;
+        height: 260rem/@num;
+        border: 8rem/@num solid rgb(255, 255, 255);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        overflow: hidden;
+        .wave {
+          position: relative;
+          width: 260rem/@num;
+          height: 260rem/@num;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, .4)
+        }
+        .plan {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          z-index: 999;
+          text-align: center;
+          p {
+            font-size: 26rem/@num;
+            span {
+              font-size: 36rem/@num;
+            }
+          }
+        }
+
+        .before, .after {
+          position: absolute;
+          width: 520rem/@num;
+          height: 520rem/@num;
+          left: 50%;
+          top: 0;
+          border-radius: 40%;
+          transform: translate(-50%, -40%) rotate(0);
+          animation: rotate 18s linear infinite;
+          z-index: 10;
+          background: #97C4E4;
+        }
+
+        .after {
+          border-radius: 47%;
+          transform: translate(-50%, -40%) rotate(0);
+          animation: rotate 10s linear -5s infinite;
+          z-index: 20;
+          background: #97C4E4;
+        }
+
+        @keyframes rotate {
+          50% {
+            transform: translate(-50%, -43%) rotate(180deg);
+          }
+          75% {
+            transform: translate(-50%, -40%) rotate(270deg);
+          }
+          100% {
+            transform: translate(-50%, -40%) rotate(360deg);
+          }
+        }
+      }
+    }
+  }
+  .swiper-pagination {
+    margin-bottom: 10rem/@num;
+    span {
+      width: 20rem/@num;
+      height: 20rem/@num;
+      background: #FFFFFF;
+    }
+    .swiper-pagination-bullet {
+      background: #CED4DA;
+      opacity: 1;
+    }
+    .swiper-pagination-bullet-active {
+      opacity: 1;
+      background: #FFFFFF;
+    }
+  }
+
+  h3 {
+    font-size: 38rem/@num;
+    position: absolute;
+    left: 50%;
+    top: 20rem/@num;
+    transform: translateX(-50%);
+    font-weight: 500;
+    z-index: 999;
+    a {
+      color: white;
+      font-size: 40rem/@num;
+    }
+  }
+}
+
+//我的权益
+.my-equity {
+  padding: 20rem/@num;
+  box-sizing: border-box;
+  h3 {
+    font-weight: 500;
+    font-size: 26rem/@num;
+    padding-bottom: 20rem/@num;
+  }
+  .class {
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+    padding: 0 20rem/@num;
+    border-bottom: 1px solid #D8DEE1;
+    a {
+      flex: 1;
+      margin-left: 90rem/@num;
+      img {
+        width: 100%;
+        height: 128rem/@num;
+      }
+    }
+    a:first-child {
+      margin-left: 0;
+    }
+  }
+
+}
+
+//提供保障
+.number {
+  padding: 0 20rem/@num;
+  h3 {
+    font-size: 26rem/@num;
+    font-weight: 500;
+    .right {
+      float: right;
+      font-size: 36rem/@num;
+      font-weight: 700;
+      color: #b4b4b5;
+    }
+  }
+  .number-bottom {
+    display: flex;
+    border-bottom: 1px solid #D8DEE1;
+    padding: 20rem/@num 0;
+    overflow: hidden;
+    .item {
+      flex: 1;
+      text-align: center;
+      font-size: 26rem/@num;
+      img {
+        width: 50rem/@num;
+        height: 50rem/@num;
+        border: 20rem/@num solid #ecf2f7;
+        border-radius: 50%;
+      }
+    }
+  }
+
+}
+
+//玩转健康生活
+.live {
+  padding: 20rem/@num;
+  h3 {
+    padding-bottom: 20rem/@num;
+  }
+  div {
+    border-radius: 15rem/@num;
+    width: 100%;
+    background: #d8d8d8;
+    height: 100rem/@num;
+  }
+}
+
+//陪诊服务
+.server {
+  padding: 0 20rem/@num;
+  box-sizing: border-box;
+  h3 {
+    .left {
+      font-size: 24rem/@num;
+      color: #8fa0ab;
+    }
+    .right {
+      float: right;
+      font-size: 20rem/@num;
+      color: #D8D8D8;
+    }
+  }
+  div {
+    border-radius: 15rem/@num;
+    width: 100%;
+    background: #d8d8d8;
+    height: 100rem/@num;
+  }
+}
+
+//更多益护服务
+.more {
+  display: block;
+  border-radius: 30rem/@num;
+  border: 1px solid #88B2DE;
+  color: #88B2DE;
+  background: white;
+  width: 582rem/@num;
+  height: 64rem/@num;
+  margin: 50rem/@num auto;
+  margin-left: 10%;
+  font-size: 24rem/@num;
+  text-align: center;
+  line-height: 64rem/@num;
+}

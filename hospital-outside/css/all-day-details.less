@@ -1,0 +1,122 @@
+@import "../../css/common";
+@import "all-day";
+.details-head {
+  padding: 30rem/@num;
+  border-bottom: 20rem/@num solid #ECF1F7;
+  box-sizing: border-box;
+  color: #33383D;
+  h3 {
+    font-size: 32rem/@num;
+    float: left;
+  }
+  p {
+    float: right;
+    color: #FF854F;
+    font-size: 32rem/@num;
+    .price{
+      font-size: 32rem/@num;
+    }
+    span {
+      font-size: 20rem/@num;
+    }
+  }
+}
+
+//详情
+.hidden{
+  display: none;
+}
+.details {
+  padding: 20rem/@num 40rem/@num;
+  box-sizing: border-box;
+  position: relative;
+  .hidden {
+    display: none;
+  }
+  .active {
+    background: #EDF2F7;
+    border: 1px solid #88B2DE;
+  }
+  button {
+    width: 180rem/@num;
+    height: 64rem/@num;
+    border-radius: 15rem/@num;
+    background: white;
+    border: 1px solid #E6E6E6;
+    margin-bottom: 50rem/@num;
+  }
+  .line {
+    position: absolute;
+    left: 53rem/@num;
+    top: 110rem/@num;
+    height:100%;
+    width: 3rem/@num;
+    background: #E1E1E1;
+    z-index: -1;
+  }
+  .item {
+    .date {
+      color: #E6E6E6;
+      font-size: 24rem/@num;
+      border-bottom: 1px dashed #E6E6E6;
+      text-align: right;
+      padding-bottom: 10rem/@num;
+    }
+    .work:before {
+      content: "";
+      display: inline-block;
+      width: 20rem/@num;
+      height: 20rem/@num;
+      border: 2px solid #8EB6E0;
+      border-radius: 50%;
+      z-index: 999;
+      background: white;
+    }
+    .work {
+      font-size: 26rem/@num;
+      margin-top: 30rem/@num;
+      span {
+        vertical-align: top;
+      }
+      .time {
+        padding-right: 30rem/@num;
+      }
+      .note {
+        background: #ECF2F8;
+        color: #879AA5;
+        width: 410rem/@num;
+        margin: 0 auto;
+        font-size: 24rem/@num;
+        line-height: 80rem/@num;
+        border-radius: 15rem/@num;
+        padding-left: 20rem/@num;
+        box-sizing: border-box;
+      }
+      img {
+        width: 354rem/@num;
+        height: 189rem/@num;
+        border-radius: 15rem/@num;
+        margin-left: 150rem/@num;
+      }
+    }
+
+  }
+
+}
+
+//费用说明+预定须知
+.explain{
+  padding: 30rem/@num;
+  box-sizing: border-box;
+  h3{
+    font-size: 28rem/@num;
+    padding-bottom: 20rem/@num;
+    color: #33383D;
+  }
+  p{
+    font-size: 24rem/@num;
+    color: #B4B4B5;
+    line-height: 50rem/@num;
+  }
+}
+

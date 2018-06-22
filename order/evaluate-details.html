@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,user-scalable=no" />
+    <link rel="stylesheet" href="css/evaluate-details.css">
+    <link rel="stylesheet" href="../lib/icon/iconfont.css">
+    <script src="../lib/jquery/jquery-3.1.1.min.js"></script>
+    <script src="js/evaluate-details.js"></script>
+    <title>评价详情</title>
+</head>
+<body>
+<div class="container">
+    <!--头部-->
+    <div class="head-details">
+        <a href="javascript:history.back(-1)"><span class="iconfont icon-iconfontjiantou1"></span></a>
+        <h3>评价详情</h3>
+    </div>
+    <!--总评分-->
+    <div class="count-evaluate">
+        <div class="count clearfloat">
+            <p class="grade"><span>{{data.serviceStarLevel}}</span> 分</p>
+            <div class="count-right">
+                <!--todo 取值 订单标签-->
+                <button>仪容整洁</button>
+                <button>仪容整洁</button>
+                <button>仪容整洁</button>
+                <button>仪容整洁</button>
+            </div>
+            <p class="hg-server star">护工服务:
+                <!-- TODO 根据数字决定下面标签的数量 -->
+                <span class="iconfont icon-xingxing"></span>
+                <span class="iconfont icon-xingxing"></span>
+                <span class="iconfont icon-xingxing"></span>
+                <span class="iconfont icon-xingxing"></span>
+                <span class="iconfont icon-xingxing"></span>
+            </p>
+            <p class="server-content star">服务内容:
+                <span class="iconfont icon-xingxing"></span>
+                <span class="iconfont icon-xingxing"></span>
+                <span class="iconfont icon-xingxing"></span>
+                <span class="iconfont icon-xingxing"></span>
+                <span class="iconfont icon-xingxing"></span>
+            </p>
+        </div>
+    </div>
+    <!--评价-->
+    <div class="evaluate">
+
+        <!--<div class="evaluate-item">
+        <div class="item-title">
+            <p class="title-left">5.0分 <span>&nbsp;&nbsp;用户名：</span><span>***mi123</span></p>
+            <p class="title-right">2018-02-26</p>
+        </div>
+        <p>杨阿姨服务态度特别好,多亏了她无微不至的照顾</p>
+        </div>-->
+        {{each data.historyAssessList as value i}}
+        <div class="evaluate-item">
+            <div class="item-title">
+                <p class="title-left">{{data.historyAssessList[i].judgeLevel}}分 <span>&nbsp;&nbsp;用户名：</span><span>{{data.historyAssessList[i].name}}</span></p>
+                <p class="title-right">{{data.historyAssessList[i].assessTime}}</p>
+            </div>
+            <p>{{data.historyAssessList[i].judgeInfo}}</p>
+            {{if(data.historyAssessList[i].judgePhoto !== "")}}
+            <div class="tm-m-photos">
+                <ul class="tm-m-photos-thumb">
+                    <li ><img src="img/{{data.historyAssessList[i].judgePhoto}}"></li>
+                </ul>
+                <div class="tm-m-photo-viewer">
+                    <img src="" alt="">
+                </div>
+            </div>
+            {{/if}}
+        </div>
+        {{/each}}
+<!--        <div class="evaluate-item">
+            <div class="item-title">
+                <p class="title-left">5.0分 <span>&nbsp;&nbsp;用户名：</span><span>***mi123</span></p>
+                <p class="title-right">2018-02-26</p>
+            </div>
+            <p>我小的时候，和奶奶住楼上楼下，奶奶是看着我长大的，她把我们当做家人一样，爸爸妈妈上班都忙，他们就会把我送到奶奶家，我们之间有着很深厚的感情～我长大了，结婚了，有了孩子，每年过年的时候会一家人一起去给奶奶拜年，孩子也特别喜欢太太，太太住院以来，孩子常常提起，问我太太的身体状况，还送了他自己画的画，希望太太早日康复！我爸爸也是经常去看望奶奶，带去鸡汤，带去饺子，就是因为这么多年的感情，让我们早已成为了一家人。今年过年，奶奶虽然不能回家过年，但我们仍然会去医院给她拜年，希望她赶紧好起来，我们都是她的亲人也感谢群姐对奶奶无微不至，尽心尽力的照顾</p>
+        </div>-->
+    </div>
+    <!--底部-->
+    <div class="foot">
+        <a href="../index.html">
+            <div class="icon icon-one"></div>
+            <p class="text-one">首页</p>
+        </a>
+        <a href="../ehubao/have-bought.html">
+            <div class="icon icon-two"></div>
+            <p>e护社区</p>
+        </a>
+        <a href="../order/order-index.html">
+            <div class="icon icon-three"></div>
+            <p>订单</p>
+        </a>
+        <a href="../personage.html">
+            <div class="icon icon-five"></div>
+            <p>我的</p></a>
+    </div>
+
+</div>
+<script>
+    $(function () {
+        $(".tm-m-photos-thumb img").on("click",function () {
+            console.log($(this).attr("src"));
+            $(".tm-m-photo-viewer").show();
+            $(".tm-m-photo-viewer img").attr("src",$(this).attr("src"));
+        });
+        $(".tm-m-photo-viewer").on("click",function () {
+            $(".tm-m-photo-viewer").hide();
+        })
+    })
+</script>
+</body>
+</html>

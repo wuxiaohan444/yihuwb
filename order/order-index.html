@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,user-scalable=no"/>
+    <link rel="stylesheet" href="css/order-index.css">
+    <script src="../lib/jquery/jquery-3.1.1.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="js/order-index.js"></script>
+    <title>订单首页</title>
+</head>
+<body>
+<div class="container">
+    <!--头部-->
+    <div class="order-head">
+        <div class="all active">全部订单</div>
+        <div class="already">已付款</div>
+        <div class="await">待评价</div>
+    </div>
+    <!--订单详情-->
+    <div class="details">
+        <!--全部订单-->
+        <div class="order-main all clearfloat">
+            <!--渲染-->
+        </div>
+        <!--已付款-->
+        <div class="order-main already">
+            <!--渲染-->
+        </div>
+        <!--待评价-->
+        <div class="order-main await">
+
+        </div>
+    </div>
+    <!--新标杆-->
+    <div class="tagline">
+        <h2>建立护理行业新标杆</h2>
+        <p>We Redefine Patients'</p>
+        <p>本平台由上海益护健康管理有限公司提供技术服务</p>
+    </div>
+    <!--底部-->
+    <div class="foot">
+        <a href="../index.html">
+            <div class="icon icon-one"></div>
+            <p class="text-one">首页</p>
+        </a>
+        <a href="https://shequ.yunzhijia.com/thirdapp/forum/network/5a7c24d9e4b0f860421d9704">
+            <div class="icon icon-two"></div>
+            <p>e护社区</p>
+        </a>
+        <a href="order-index.html">
+            <div class="icon icon-three"></div>
+            <p style="color:#88B2DE;">订单</p>
+        </a>
+        <a href="../personage.html">
+            <div class="icon icon-five"></div>
+            <p>我的</p></a>
+    </div>
+</div>
+<script type="text/html" id="all">
+    {{each data v i}}
+    <div class="order-main-item clearfloat" data-id="{{data[i].id}}">
+        <div class="item-right"></div>
+        <div class="item-left">
+            <span>{{data[i].title}}</span>
+        </div>
+        <div class="item-body">
+            {{if data[i].projectType===0 }}
+            <img src="../images/yiyuannei.png" alt="">
+            <span>{{data[i].city}}-{{data[i].address}}</span>
+            {{else}}
+            <img src="../images/yan-s.png" alt="">
+            <span>{{data[i].city}}-{{data[i].county}}</span>
+            {{/if}}
+            <p></p>
+        </div>
+        <div class="item-bottom">
+            <span class="time">计时共{{data[i].timeCount}}天， <span class="price">计件共8件，</span>待付款</span><span class="a-price">￥{{data[i].realPrice}}</span>
+        </div>
+    </div>
+    {{/each}}
+</script>
+<script type="text/html" id="already">
+    {{each rows v i}}
+    <div class="order-main-item clearfloat" data-id="{{rows[i].id}}">
+        <div class="item-right"></div>
+        <div class="item-left">
+            <span>骨科一对一服务 - 不能自理</span>
+            <img src="../images/计时copy.png" alt="">
+        </div>
+        <div class="item-body">
+            {{if rows[i].projectType ===0 }}
+            <img src="../images/医院内护理-s.png" alt="">
+            <span>{{rows[i].city}}-{{rows[i].address}}</span>
+            {{else}}
+            <img src="../images/延续护理-s.png" alt="">
+            <span>{{rows[i].city}}-{{rows[i].county}}</span>
+            {{/if}}
+            <p>骨科基础护理包</p>
+        </div>
+        <div class="item-bottom">
+            <span>计时共{{rows[i].timeCount}}天，计件共8件，待付款</span><span class="a-price">￥{{rows[i].realPrice}}</span>
+        </div>
+    </div>
+    {{/each}}
+</script>
+<script type="text/html" id="await">
+    {{each rows v i}}
+    <div class="order-main-item clearfloat" data-id="{{rows[i].id}}">
+        <div class="item-right"></div>
+        <div class="item-left">
+            <span>骨科一对一服务 - 不能自理</span>
+            <img src="../images/计时copy.png" alt="">
+        </div>
+        <div class="item-body">
+            {{if rows[i].projectType ===0 }}
+            <img src="../images/医院内护理-s.png" alt="">
+            <span>{{rows[i].city}}-{{rows[i].address}}</span>
+            {{else}}
+            <img src="../images/延续护理-s.png" alt="">
+            <span>{{rows[i].city}}-{{rows[i].county}}</span>
+            {{/if}}
+            <p>骨科基础护理包</p>
+        </div>
+        <div class="item-bottom">
+            <span>计时共{{rows[i].timeCount}}天，计件共8件，待付款</span><span class="a-price">￥{{rows[i].realPrice}}</span>
+        </div>
+    </div>
+    {{/each}}
+</script>
+<script src="../lib/template-web.js"></script>
+</body>
+</html>

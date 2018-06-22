@@ -1,0 +1,85 @@
+@import "../../css/common";
+//头部
+.assess-head{
+  padding: 0 20rem/@num;
+  box-sizing: border-box;
+  background: linear-gradient(to right, #88B2DE, #A8D9EA);
+  height: 260rem/@num;
+  color: white;
+  text-align: center;
+  .assess-arrow{
+    float: left;
+    span{
+      color: white;
+    }
+  }
+  img{
+    width: 120rem/@num;
+    height: 120rem/@num;
+    padding-top: 50rem/@num;
+    border-radius: 50%;
+  }
+  p{
+    font-size: 20rem/@num;
+  }
+}
+
+//记录
+.assess-record{
+  width: 100%;
+  .assess-record-item{
+    display: block;
+    height: 80rem/@num;
+    padding: 30rem/@num;
+    box-sizing: border-box;
+    border-bottom: 1px solid #EEF3F8;
+    .item-left{
+      float: left;
+      font-size: 24rem/@num;
+    }
+    .item-right{
+      float: right;
+      font-size: 24rem/@num;
+      color: #B4B4B5;
+    }
+  }
+}
+
+//底部
+.foot {
+  width: 100%;
+  height: 100rem/@num;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  background-color: white;
+  a {
+    flex: 1;
+    text-align: center;
+    font-size: 24rem/@num;
+    color: #92A3AD;
+    .icon {
+      width: 40rem/@num;
+      height: 40rem/@num;
+      margin-left: 50%;
+      margin-top: 15rem/@num;
+      transform: translateX(-50%);
+    }
+    .icon-one {
+      background: url("../../images/bottom1.png");
+      background-size: 40rem/@num 40rem/@num;
+    }
+    .icon-two {
+      background: url("../../images/bottomcopy1.png");
+      background-size: 40rem/@num 40rem/@num;
+    }
+    .icon-three {
+      background: url("../../images/bottomcopy12.png");
+      background-size: 40rem/@num 40rem/@num;
+    }
+    .icon-five {
+      background: url("../../images/bottomcopy3.png");
+      background-size: 40rem/@num 40rem/@num;
+    }
+  }
+}

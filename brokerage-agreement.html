@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,user-scalable=no" />
+    <link rel="stylesheet" href="css/brokerage-agreement.css">
+    <link rel="stylesheet" href="lib/icon/iconfont.css">
+    <title>居间协议</title>
+</head>
+<body>
+<div class="container">
+    <!--头部-->
+    <div class="head">
+        <a href="javascript:history.back(-1);"><span class="iconfont icon-iconfontjiantou1"></span></a>
+        <h3>居间协议</h3>
+    </div>
+    <!--主要部分-->
+    <div class="main">
+        <h5><span>甲方(病患家属)</span><span>乙方(护工)</span><span>丙方(上海益护健康管理有限公司)</span></h5>
+        <p>根据《中华人民共和国合同法》及其它相关法律,法规之规定在平等自愿,协商一致的基础上,签定合同,并共同遵守。经甲乙丙三方友好协商,就乙方向甲方提供护理服务一事达成如下协议:
+        </p>
+        <p>1,签订本协议前,甲方需详细告知乙方病人一些基本情况,如病情、家庭情况、个人精神及情绪状况,并提出您的相关要求,并商定收费标准。否则引起的不良后果由甲方负责。</p>
+        <p>2,乙方在对病员提供基本生活护理时,因工作需要会离开甲方员,此时,甲方病员有照顾需求,须自己或请同病房其他人员呼叫乙方或病区士,千万不要个人行为,以免发生意外,若因病员擅自个人行为造成意外,乙方不承担责任。</p>
+        <p>3,因甲方病员自身原因发生的意外事故,如突发疾病亡故、自身原因引起的摔伤、烫伤等责任由甲方自行承担。如因乙方操作不当而造成摔伤、烫伤等责任由乙方承担。</p>
+        <p>4,夜间陪护过程中,甲方病员如要下床外出,应叫醒乙方,在乙方陪同下下床外出,若因甲方病员擅自个人行为造成意外,乙方不承担责任。</p>
+        <p>5,各方确认:丙方收取的费用仅为介绍甲乙双方发生雇佣关系的中介费用,所以,在乙方为甲方提供陪护服务过程中引起的任何纠纷,甲、乙双方应自行协商解决,丙方可以参与调解但不承担任何责任。
+        </p>
+    </div>
+    <!--同意-->
+    <div class="agree">
+        <div class="radio"></div>
+        <p>我已确认相关<span style="font-weight: 900">居间协议</span></p>
+    </div>
+</div>
+<script>
+    let radio = document.querySelector(".radio");
+    radio.addEventListener("click",function () {
+        radio.className="radio now";
+        window.history.go(-1);
+    })
+</script>
+</body>
+</html>

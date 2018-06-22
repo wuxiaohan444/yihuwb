@@ -1,0 +1,100 @@
+@import "../../css/common";
+//头部
+.rule-head {
+  padding: 20rem/@num;
+  box-sizing: border-box;
+  position: relative;
+  text-align: center;
+  background: #EEF3F8;
+  span {
+    position: absolute;
+    left: 20rem/@num;
+    font-size: 40rem/@num;
+    color: #B4B4B5;
+  }
+  h3 {
+    font-size: 32rem/@num;
+    font-weight: 500;
+  }
+}
+
+//主体
+.rule-main {
+  padding: 20rem/@num;
+  padding-top: 0;
+  box-sizing: border-box;
+  font-size: 30rem/@num;
+  color: #B4B4B5;
+  margin-bottom: 120rem/@num;
+  .rule-item {
+    box-sizing: border-box;
+    .rule-title {
+      height: 80rem/@num;
+      line-height: 80rem/@num;
+      border-bottom: 2rem/@num solid #EEF3F8;
+      box-sizing: border-box;
+      .left {
+        float: left;
+        color: #4E4E4F;
+        font-size: 24rem/@num;
+      }
+      .right {
+        float: right;
+        font-weight: 700;
+      }
+    }
+    .rule-content {
+      font-size: 20rem/@num;
+      padding: 20rem/@num 40rem/@num;
+      border-bottom: 2rem/@num  solid #EEF3F8;
+      color: #929292;
+      transition: all 2s;
+      p {
+        line-height: 40rem/@num;
+      }
+    }
+    .rule-content:last-child{
+      border-bottom:none;
+    }
+  }
+
+}
+
+//底部
+.foot {
+  width: 100%;
+  height: 100rem/@num;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  background-color: white;
+  a {
+    flex: 1;
+    text-align: center;
+    font-size: 24rem/@num;
+    color: #92A3AD;
+    .icon {
+      width: 40rem/@num;
+      height: 40rem/@num;
+      margin-left: 50%;
+      margin-top: 15rem/@num;
+      transform: translateX(-50%);
+    }
+    .icon-one {
+      background: url("../../images/bottom1.png");
+      background-size: 40rem/@num 40rem/@num;
+    }
+    .icon-two {
+      background: url("../../images/bottomcopy1.png");
+      background-size: 40rem/@num 40rem/@num;
+    }
+    .icon-three {
+      background: url("../../images/bottomcopy12.png");
+      background-size: 40rem/@num 40rem/@num;
+    }
+    .icon-five {
+      background: url("../../images/bottomcopy3.png");
+      background-size: 40rem/@num 40rem/@num;
+    }
+  }
+}

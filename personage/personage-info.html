@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,user-scalable=no" />
+    <link rel="stylesheet" href="css/personage-info.css">
+    <link rel="stylesheet" href="../lib/icon/iconfont.css">
+    <script src="../lib/jquery/jquery-3.1.1.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="js/personage-info.js"></script>
+    <title>个人信息</title>
+</head>
+<body>
+<div class="container">
+    <div class="info-head">
+        <a href="javascript:history.back(-1)"><span class="iconfont icon-iconfontjiantou1"></span></a>
+        <h3>个人信息</h3>
+        <img src= "" alt="">
+        <!--TODO 添加微信账号-->
+        <p style="display:none;">微信账号：<span>待录入</span>&nbsp;&nbsp;&nbsp;用户编号：<span class="number"></span></p>
+    </div>
+    <!--基础信息-->
+    <div class="basic-info clearfloat">
+        <h3>基础用户信息</h3>
+        <p class="name-hint">姓名:</p>
+        <input class="name" placeholder="" type="text" value="">
+        <!-- todo -->
+        <div class="sex"><span class="please">请选择性别</span>
+            <span class="iconfont icon-weibiaoti35"></span>
+            <ul class="option">
+                <li>男</li>
+                <li>女</li>
+            </ul>
+        </div>
+        <p class="id-hint">身份证:</p>
+        <input class="id-card" placeholder="" type="text" value="">
+        <span class="id-verify"></span>
+        <p class="phone-hint">手机/电话号码:</p>
+        <input class="phone" placeholder="" type="text" value="">
+        <span class="photo-verify"></span>
+        <p class="address-hint">常住地址：</p>
+        <textarea class="address" placeholder=""></textarea>
+    </div>
+    <!--修改-->
+    <div class="info-amend">修改</div>
+    <!--底部-->
+    <div class="foot">
+        <a href="../index.html">
+            <div class="icon icon-one"></div>
+            <p class="text-one">首页</p>
+        </a>
+        <a href="../ehubao/have-bought.html">
+            <div class="icon icon-two"></div>
+            <p>e护社区</p>
+        </a>
+        <a href="../order/order-index.html">
+            <div class="icon icon-three"></div>
+            <p>订单</p>
+        </a>
+        <a href="../personage.html">
+            <div class="icon icon-five"></div>
+            <p class="text-five" style="color: #88B2DE;">我的</p></a>
+    </div>
+</div>
+<script src="../lib/template-web.js"></script>
+</body>
+</html>

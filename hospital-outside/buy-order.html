@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,user-scalable=no" />
+    <link rel="stylesheet" href="css/buy-order.css">
+    <link rel="stylesheet" href="../lib/icon/iconfont.css">
+    <link rel="stylesheet" href="../css/calendar.css">
+    <script src="../lib/jquery/jquery-3.1.1.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/calendar.js"></script>
+    <script src="js/buy-order.js"></script>
+    <title>院外产品购买</title>
+</head>
+<body>
+<div class="container">
+    <div class="buy-head">
+        <a href="javascript:history.back()"><span class="iconfont icon-iconfontjiantou1"></span></a>
+        <p><span>优质护工</span><span>—</span><span>家庭护理</span></p>
+    </div>
+    <form action="" id="info">
+        <span class="hint">被护理人姓名：</span><input type="text" value="" placeholder="" class="name">
+        <button class="choose" type="button">选择其他受益人</button>
+        <br>
+        <span class="hint">联系电话：</span><input type="text" value="" placeholder=""><br>
+        <span class="hint">护理地区：</span><input type="text" placeholder="" class="hospital"><br>
+        <span class="hint " >服务地址：</span><input type="text" placeholder="" class="address"><br>
+        <span class="hint">护理开始时间：</span><div class="date"><span></span><img src="../images/calendar-grid-58.png" alt=""></div>
+        <br>
+        <span class="hint">护理结束时间：</span><div class="date"><span></span><img src="../images/calendar-grid-58.png" alt=""></div>
+    </form>
+    <!--红包-->
+    <div class="red-packet">
+        <div class="red-left"><span class="iconfont icon-hongbao-m"></span>
+            <span>益护优惠券</span>
+        </div>
+        <div class="red-right"><span>50元现金抵用券</span><span class="iconfont icon-you
+向上
+"></span></div>
+    </div>
+
+    <!--确认付款-->
+    <div class="payment">
+        <i></i>
+        <div class="left">
+            <div class="radio"></div>
+            <div class="affirm"> 我已确认相关<a href="../brokerage-agreement.html">居间协议</a></div>
+            <div class="price">￥<span>1,1550</span><span class="old">￥1,1600</span></div>
+        </div>
+        <div class="right">
+            <h5>立即支付</h5>
+            <p>护工经理稍后将联系您</p>
+        </div>
+    </div>
+
+    <!--日历-->
+    <div class="modal">
+        <div id="calendar" class="calendar" ></div>
+    </div>
+    <!--选择其他受益人-->
+    <div class="else">
+
+    </div>
+</div>
+<!--选择其他受益人-->
+<script type="text/html" id="else">
+    <div>
+        {{each data v i}}
+        <button data-id="{{data[i].id}}">{{data[i].name}}</button>
+        {{/each}}
+    </div>
+</script>
+<script src="../lib/template-web.js"></script>
+<script>
+    $(function () {
+        // 跳转到红包页
+        $(".red-right .icon-you").on("click",function () {
+            window.location.href="../red-packet/discount-coupon.html"
+        });
+        // 跳转到受益人列表
+        $("#info .choose").on("click", function () {
+            // window.location.href="../receiptor/receiptor-list.html"
+            $('.else').show();
+        })
+
+        let relationshipId; // 受益人
+        let grade; //护工等级
+        let sex; //护工性别
+        // 推荐单项发送请求
+        let id = decodeURI(window.location.search).split("&")[0].split("=")[1];
+        let name=decodeURI(window.location.search).split("&")[1].split("=")[1];
+        let type=decodeURI(window.location.search).split("&")[2].split("=")[1];
+        $(".buy-head p span").text(name); //渲染头部
+        console.log(id,name,type);
+
+        // 查看受益人
+        $.ajax({
+            url: ip + "/patient/customerRelationship/selectAllBeneficiary?loginUserCode="+getLoginUserCode(),
+            type: "GET",
+            data: {
+                id: "1",
+            },
+            dataType: "json",
+            jsonp: "callback",
+            jsonpCallback: "success_jsonpCallback",
+            async: false,
+            contentType:"application/json;charset=utf-8",
+            xhrFields:{
+                withCredentials:true
+            },
+            beforeSend: function(xhr) {
+                xhr.withCredentials = true;
+            },
+            success: function (data) {
+                console.log(data);
+                $(".else").html(template("else",data));
+                for (let i = 0; i < $(".else button").length; i++) {
+                    $(".else button").eq(i).on("click", function () {
+                        $(".name").val($(this).text());
+                        $('.else').hide();
+                        relationshipId = $(this).attr("data-id");
+                        console.log(relationshipId);
+                    })
+                }
+            },
+        });
+
+        // 新增订单
+        $(".payment .right").on("click", function () {
+            console.log(1);
+            // 护工等级
+            for (let i = 0; i < $(".choose-style button").length; i++) {
+                if ($(".choose-style button").eq(0).hasClass("active")) {
+                    grade = 10;
+                } else {
+                    grade = 0;
+                }
+            }
+            // 护工性别
+            for (let i = 0; i < $(".list .radio").length; i++) {
+                if ($(".list .radio").eq(0).hasClass("now")) {
+                    sex = 1;
+                } else {
+                    sex = 0;
+                }
+            }
+            let hospital = $(".hospital").val();  //护理医院
+            let server = $(".address").val();  //服务地址
+            let beginTime = $(".date span").eq(0).text();
+            let endTime = $(".date span").eq(1).text();
+            console.log(type,beginTime, endTime, relationshipId, hospital, server,grade,sex);
+            $.ajax({
+                type: "POST",
+                url: ip + "/patient/order/newOrder?loginUserCode="+getLoginUserCode(),
+                data:JSON.stringify( {
+                    customerRelationshipId: relationshipId,
+                    hopeNurseStar: grade, //护工等级
+                    hopeNurseSex: sex, //护工性别
+                    beginTime: beginTime, //开始时间
+                    endTime: endTime,//结束时间
+                    county: hospital, //护理医院
+                    address: server, //服务地址
+                    info:JSON.stringify([{
+                        type:type,
+                        count:1,
+                        productId:id
+                    }]),
+                }),
+                dataType: "json",
+                contentType: "application/json;charset=utf-8",
+                xhrFields: {
+                    withCredentials: true
+                },
+                beforeSend: function (xhr) {
+                    xhr.withCredentials = true;
+                },
+                success: function (data) {
+                    console.log(data);
+                    if(data.msg!=="操作成功"){
+                        alert("操作失败")
+                    }
+                    else{
+                        alert("操作成功");
+                        window.location.href="../index.html"
+                    }
+
+                },
+            })
+        });
+    })
+
+
+</script>
+</body>
+</html>

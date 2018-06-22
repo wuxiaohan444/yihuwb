@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,user-scalable=no" />
+    <link rel="stylesheet" href="css/hospital-inside.css">
+    <link rel="stylesheet" href="../lib/icon/iconfont.css">
+    <script src="../lib/jquery/jquery-3.1.1.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="js/hospital-inside.js"></script>
+    <title>院类护理</title>
+</head>
+<body>
+<div class="container">
+    <div class="hospital-head">
+        <span class="iconfont icon-kefuzhongxin"></span>
+        <h3>院内护理</h3>
+        <p><span class="city-address">上海</span>市 - <a href="city-inside.html">人民医院</a></p>
+    </div>
+    <!--选择-->
+    <div class="choose">
+        <a class="item now2" href="javascript:;">
+            <span class="day iconfont icon-clock"></span>
+            <p>全天陪护</p>
+            <p class="explain">院类全程专业陪护</p>
+            <div class="triangle"></div>
+        </a>
+        <a class="item" href="javascript:;">
+            <span class="iconfont icon-caidan"></span>
+            <p>单项护理</p>
+            <p class="explain">选择您需要的护理项目</p>
+            <div class=" "></div>
+        </a>
+    </div>
+    <div>
+        <!--全天护理-->
+        <div class="single all">
+          <!--渲染-->
+        </div>
+        <!--单项护理-->
+        <div class="single alone now">
+            <!--渲染-->
+        </div>
+    </div>
+    <!--底部-->
+    <div class="foot">
+        <a href="../index.html">
+            <div class="icon icon-one"></div>
+            <p class="text-one" style="color: #88B2DE">首页</p>
+        </a>
+        <a href="https://shequ.yunzhijia.com/thirdapp/forum/network/5a7c24d9e4b0f860421d9704">
+            <div class="icon icon-two"></div>
+            <p>e护社区</p>
+        </a>
+        <a href="../order/order-index.html">
+            <div class="icon icon-three"></div>
+            <p>订单</p>
+        </a>
+        <a href="../personage.html">
+            <div class="icon icon-five"></div>
+            <p>我的</p></a>
+    </div>
+</div>
+<script type="text/html" id="all">
+    {{each data v i}}
+    <a href="product-list.html?id={{data[i].id}}&&type={{data[i].type}}&&positionId={{data[i].positionId}}">
+        <div>
+            <img src="../images/13.png" alt="">
+        </div>
+        <p>{{data[i].name}}</p>
+    </a>
+    {{/each}}
+</script>
+<script type="text/html" id="alone">
+    {{each data v i}}
+    <a href="single.html?id={{data[i].id}}&type={{data[i].type}}&positionId={{data[i].positionId}}&singleName={{data[i].name}}">
+        <div>
+            <img src="../images/13.png" alt="">
+        </div>
+        <p>{{data[i].name}}</p>
+    </a>
+    {{/each}}
+</script>
+<script src="../lib/template-web.js"></script>
+</body>
+</html>

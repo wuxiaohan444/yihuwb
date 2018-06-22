@@ -1,0 +1,172 @@
+@import "../../css/common";
+
+.order-head {
+  width: 100%;
+  height: 92rem/@num;
+  display: flex;
+  border-bottom: 1px solid #D8DEE1;
+  div {
+    flex: 1;
+    font-size: 28rem/@num;
+    text-align: center;
+    line-height: 92rem/@num;
+    box-sizing: border-box;
+  }
+  .active {
+    border-bottom: 4rem/@num solid #3C9DF2;
+  }
+}
+
+//订单
+.details {
+  .already {
+    display: none;
+  }
+  .await {
+    display: none;
+  }
+}
+
+.order-main {
+  width: 100%;
+  .order-main-item {
+    width: 100%;
+    padding: 30rem/@num;
+    border-bottom: 1px solid #D8DEE1;
+    position: relative;
+    box-sizing: border-box;
+    .item-left {
+      float: left;
+      padding-top: 15rem/@num;
+      #product1{
+        margin-bottom: 30rem/@num;
+      }
+      #product2{
+        margin-bottom: 30rem/@num;
+      }
+     .now{
+       display: none;
+      }
+      span {
+        float: left;
+        font-size: 26rem/@num;
+      }
+      img {
+        float: left;
+        width: 134rem/@num;
+        height: 40rem/@num;
+        margin-left: 10rem/@num;
+      }
+    }
+    .item-right {
+      position: absolute;
+      width: 160rem/@num;
+      height: 63rem/@num;
+      border-radius: 15rem/@num;
+      font-size: 28rem/@num;
+      text-align: center;
+      line-height: 63rem/@num;
+      right: 40rem/@num;
+    }
+    .item-body {
+      float: left;
+      width: 100%;
+      box-sizing: border-box;
+      img {
+        width: 34rem/@num;
+      }
+      span {
+        font-size: 20rem/@num;
+        vertical-align: middle;
+        color: #B4B4B5;
+      }
+      p {
+        font-size: 24rem/@num;
+        color: #929292;
+        padding-left: 45rem/@num;
+      }
+    }
+    .item-bottom {
+      position: absolute;
+      right: 30rem/@num;
+      bottom: 20rem/@num;
+      span {
+        font-size: 24rem/@num;
+        color: #B4B4B5;
+      }
+      .a-price {
+        color: #FF854F;
+      }
+      .i-price {
+        color: #88B2DE;
+      }
+    }
+
+    //待付款
+    .await-money {
+      color: white;
+      background: linear-gradient(to right, #8FBCE1, #88B2DE);
+    }
+    //进行中
+    .ing {
+      color: #FF854F;
+    }
+    //服务中
+    .server {
+      color: #8CD69B;
+    }
+    //待评价
+    .await-assess {
+      border: 1px solid #E8E8E8;
+      color: #B4B4B5;
+      box-sizing: border-box;
+    }
+    //已完成订单
+    .complete {
+      color: #B9B9BA;
+    }
+  }
+}
+
+//宣传语
+.tagline {
+  width: 100%;
+  height: 195rem/@num;
+  background-color: #EEF3F8;
+  color: #CFD6DB;
+  text-align: center;
+  padding: 20rem/@num 0;
+  margin-bottom: 100rem/@num;
+  h2 {
+    font-size: 36rem/@num;
+    font-weight: 500;
+    padding-top: 30rem/@num;
+  }
+  p {
+    font-size: 28rem/@num;
+    line-height: 50rem/@num;
+  }
+}
+
+//底部
+.foot {
+  a {
+    .icon-one {
+      background: url("../../images/bottom1.png");
+      background-size: 40rem/@num 40rem/@num;
+    }
+    .icon-two {
+      background: url("../../images/bottomcopy1.png");
+      background-size: 40rem/@num 40rem/@num;
+    }
+    .icon-three {
+      background: url("../../images/bottomcopy2.png");
+      background-size: 40rem/@num 40rem/@num;
+    }
+    .icon-five {
+      background: url("../../images/bottomcopy13.png");
+      background-size: 40rem/@num 40rem/@num;
+    }
+  }
+
+}

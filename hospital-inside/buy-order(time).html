@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,user-scalable=no"/>
+    <link rel="stylesheet" href="css/buy-order(time).css">
+    <link rel="stylesheet" href="../lib/icon/iconfont.css">
+    <link rel="stylesheet" href="../css/calendar.css">
+    <script src="../lib/jquery/jquery-3.1.1.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/calendar.js"></script>
+    <title>院内计时购买</title>
+</head>
+<body>
+<div class="container">
+    <div class="buy-head">
+        <a href="javascript:history.back(-1)"><span class="iconfont icon-iconfontjiantou1"></span></a>
+        <p><span></span></p>
+    </div>
+    <!--信息-->
+    <form action="" id="info">
+        被护理人姓名：<input type="text" value="" placeholder="" class="name">
+        <button class="choose" type="button">选择其他受益人</button>
+        <br>
+        联系电话：<input type="text" value="" placeholder=""><br>
+        护理医院：<input type="text" placeholder="" class="hospital"><br>
+        服务地址：<input type="text" placeholder="" class="address"><br>
+        护理开始时间：
+        <div class="date"><span></span><img src="../images/calendar-grid-58.png" alt=""></div>
+        <br>
+        护理结束时间：
+        <div class="date"><span></span><img src="../images/calendar-grid-58.png" alt=""></div>
+        <div class="choose-style">
+            护工等级：
+            <div style="display: inline-block" class="nur">
+                <!--<button class="active" type="button">优质护工</button>-->
+                <!--渲染-->
+            </div>
+
+            <br>
+            <div class="list">
+                <span>护工性别： </span>
+                <div>
+                    <div class="radio now"></div>
+                    <span>男</span>
+                </div>
+                <div>
+                    <div class="radio"></div>
+                    <span>女</span>
+                </div>
+            </div>
+        </div>
+    </form>
+    <!--红包-->
+    <div class="red-packet">
+        <div class="red-left">
+            <span class="iconfont icon-hongbao-m"> 益护优惠券</span>
+        </div>
+        <div class="red-right"><span class="no">暂无优惠券</span><span class="iconfont icon-you"></span></div>
+    </div>
+    <!--产品-->
+    <div class="single-main">
+        <!--推荐-->
+    </div>
+    <!--确认付款-->
+    <div class="payment">
+        <div class="left">
+            <div class="radio"></div>
+            <div class="affirm"><span style="float: left">我已确认相关</span><a href="../brokerage-agreement.html">居间协议</a>
+            </div>
+            <div class="price">￥<span class="one"></span><span class="old">￥</span></div>
+        </div>
+        <div class="right">
+            <h5>立即支付</h5>
+            <p>护工经理稍后将联系您</p>
+        </div>
+    </div>
+    <!--新标杆-->
+    <div class="tagline">
+        <h2>建立护理行业新标杆</h2>
+        <p>We Redefine Patients'</p>
+        <p>本平台由上海益护健康管理有限公司提供技术服务</p>
+    </div>
+    <!--日历-->
+    <div class="modal">
+        <div id="calendar" class="calendar"></div>
+    </div>
+    <!--选择其他受益人-->
+    <div class="else">
+
+    </div>
+</div>
+<script src="js/buy-order.js"></script>
+<!--推荐单项-->   <!--单项暂时无法选-->
+<script type="text/html" id="product">
+    <div class="product-title clearfloat">
+        <h4>推荐单项护理服务</h4>
+        <div class="title-right"><span class="iconfont icon-shuaxin"> 换一批</span></div>
+    </div>
+    {{each data v i}}
+    <div class="item">
+        <div class="radio"></div>
+        <img src="{{data[i].banner.photo}}" alt="" class="product">
+        <div class="name">
+            <h3>{{data[i].name}}</h3>
+            <p>￥<span class="real-price">{{data[i].detail.salePrice}}</span><span class="small">/次</span></p>
+        </div>
+        <div class="num">
+            <button class="minus now">-</button>
+            <input class="count" type="text" placeholder="" value="0">
+            <button class="plus">+</button>
+        </div>
+    </div>
+    {{/each}}
+</script>
+<!--选择其他受益人-->
+<script type="text/html" id="else">
+    <div>
+        {{each data v i}}
+        <button data-id="{{data[i].id}}">{{data[i].name}}</button>
+        {{/each}}
+    </div>
+
+</script>
+<script type="text/html" id="nur">
+    {{each data.detail.costs v i}}
+    <button type="button">{{data.detail.costs[i].name}}</button>
+    {{/each}}
+</script>
+<script src="../lib/template-web.js"></script>
+<script>
+    $(function () {
+        let relationshipId; // 受益人
+        let grade; //护工等级
+        let sex; //护工性别
+        // 推荐单项发送请求
+        let id = decodeURI(window.location.search).split("&")[0].split("=")[1];
+        let name = decodeURI(window.location.search).split("&")[1].split("=")[1];
+        let type = decodeURI(window.location.search).split("&")[2].split("=")[1];
+        let detailId = decodeURI(window.location.search).split("&")[3].split("=")[1];
+        let price = decodeURI(window.location.search).split("&")[4].split("=")[1];
+        $(".payment .price .one").text(price);
+
+        // 计算天数
+
+
+
+
+
+        $(".buy-head p span").text(name); //渲染头部
+        console.log(price);
+        // 推荐信息
+        $.ajax({
+            url: ip + "/patient/product/getProductRecommend?loginUserCode=" + getLoginUserCode(),
+            data: {
+                productDeId: detailId
+            },
+            type: "GET",
+            async: false,
+            contentType: "application/json;charset=utf-8",
+            xhrFields: {
+                withCredentials: true
+            },
+            beforeSend: function (xhr) {
+                xhr.withCredentials = true;
+            },
+            success: function (data) {
+                console.log(data);
+                $(".single-main").html(template("product", data))
+            }
+        });
+
+
+        // 查看受益人
+        $.ajax({
+            url: ip + "/patient/customerRelationship/selectAllBeneficiary?loginUserCode=" + getLoginUserCode(),
+            type: "GET",
+            data: {
+                id: "1",
+            },
+            dataType: "json",
+            jsonp: "callback",
+            jsonpCallback: "success_jsonpCallback",
+            async: false,
+            contentType: "application/json;charset=utf-8",
+            xhrFields: {
+                withCredentials: true
+            },
+            beforeSend: function (xhr) {
+                xhr.withCredentials = true;
+            },
+            success: function (data) {
+                console.log(data);
+                $(".else").html(template('else', data))
+                for (let i = 0; i < $(".else button").length; i++) {
+                    $(".else button").eq(i).on("click", function () {
+                        $(".name").val($(this).text());
+                        $('.else').hide();
+                        relationshipId = $(this).attr("data-id");
+                        console.log(relationshipId);
+                    })
+                }
+            },
+        });
+
+
+        // 产品
+        $.ajax({
+            url: ip + "/patient/product/selectProductById?loginUserCode=" + getLoginUserCode(),
+            type: "GET",
+            data: {
+                id: id
+            },
+            contentType: "application/json;charset=utf-8",
+            xhrFields: {
+                withCredentials: true
+            },
+            beforeSend: function (xhr) {
+                xhr.withCredentials = true;
+            },
+            async: false,
+            success: function (data) {
+                console.log(data);
+                $(".choose-style .nur").html(template("nur", data))
+                for (let i = 0; i < $(".choose-style button").length; i++) {
+                    $(".choose-style button").eq(i).on("click", function () {
+                        $(this).addClass("active").siblings().removeClass("active");
+                        $(".payment .price .one").text(data.data.detail.costs[i].price)
+                        grade = data.data.detail.costs[i].id
+                    });
+                }
+            }
+        });
+
+        // 新增订单
+        $(".payment .right").on("click", function () {
+            console.log(grade);
+            // 护工性别
+            for (let i = 0; i < $(".list .radio").length; i++) {
+                if ($(".list .radio").eq(0).hasClass("now")) {
+                    sex = 1;
+                } else {
+                    sex = 0;
+                }
+            }
+            let hospital = $(".hospital").val();  //护理医院
+            let server = $(".address").val();  //服务地址
+            let beginTime = $(".date span").eq(0).text();
+            let endTime = $(".date span").eq(1).text();
+            console.log(type, beginTime, endTime, relationshipId, hospital, server, grade, sex);
+            let day1 = new Date("2018-6-22");
+            console.log(day1);
+            let day2 = new Date("2018-7-31");
+            console.log(Math.floor((day2 - day1) / (1000 * 60 * 60 * 24)));
+            $.ajax({
+                type: "POST",
+                url: ip + "/patient/order/newOrder?loginUserCode=" + getLoginUserCode(),
+                data: JSON.stringify({
+                    customerRelationshipId: relationshipId,
+                    hopeNurseLevel: grade, //护工等级
+                    hopeNurseSex: sex, //护工性别
+                    beginTime: beginTime, //开始时间
+                    endTime: endTime,//结束时间
+                    county: hospital, //护理医院
+                    address: server, //服务地址
+                    info: JSON.stringify([{
+                        type: type,
+                        count: 1,
+                        productId: id
+                    }]),
+                }),
+                dataType: "json",
+                contentType: "application/json;charset=utf-8",
+                xhrFields: {
+                    withCredentials: true
+                },
+                beforeSend: function (xhr) {
+                    xhr.withCredentials = true;
+                },
+                success: function (data) {
+                    console.log(data);
+                    if (data.msg !== "操作成功") {
+                        alert("操作失败")
+                    }
+                    else {
+                        alert("操作成功");
+                        window.location.href = "../index.html"
+                    }
+                },
+            })
+        });
+
+
+        // 点击选中
+        for (let i = 0; i < $(".single-main .item").length; i++) {
+            $(".single-main .item .radio").eq(i).on("click", function () {
+                $(this).toggleClass("selected");
+            })
+        }
+        // 跳转到红包页
+        $(".red-right .icon-you").on("click", function () {
+            window.location.href = "../red-packet/discount-coupon.html"
+        });
+        // 跳转到受益人列表
+        $("#info .choose").on("click", function () {
+            // window.location.href="../receiptor/receiptor-list.html"
+            $('.else').show();
+        });
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,user-scalable=no"/>
+    <link rel="stylesheet" href="../lib/icon/iconfont.css">
+    <link rel="stylesheet" href="css/my-assess(inside).css">
+    <script src="../lib/jquery/jquery-3.1.1.min.js"></script>
+    <script src="../js/common.js"></script>
+    <title>订单评估（院内）</title>
+</head>
+<body>
+<div class="container">
+    <!--头部-->
+    <div class="assess-head">
+        <!--渲染-->
+    </div>
+    <!--信息-->
+    <div class="assess-info">
+        <!--渲染-->
+    </div>
+    <!--新标杆-->
+    <div class="tagline">
+        <h2>建立护理行业新标杆</h2>
+        <p>We Redefine Patients'</p>
+        <p>本平台由上海益护健康管理有限公司提供技术服务</p>
+    </div>
+</div>
+<script type="text/html" id="info">
+    <div class="info-item">
+        <p>护理医院：<span>{{data.hospitalName}}</span></p>
+        <p>服务地址：<span>{{data.address}}</span></p>
+        <div class="item-class clearfloat">
+            <p>护理等级：<span>{{data.nurseLevel}}</span></p>
+            <p>受益人关系：<span>{{data.relationship}}</span></p>
+        </div>
+        <div class="item-class clearfloat">
+            <p>期望护工性别：<span>{{data.nurseSex}}</span></p>
+            <p>期望护工星级：<span>{{data.nurseStar}}</span></p>
+        </div>
+
+    </div>
+    <div class="info-item">
+        <p>过敏药物：<span>{{data.allergyDrug}}</span></p>
+        <p>食物禁忌：<span>{{data.foodTaboo}}</span></p>
+        <p>传染病：<span>{{data.infectDisease}}</span></p>
+        <!--对号-->
+        <div class="list autonomy">
+            <span>自主能力: </span>
+            <!-- TODO {{data.autonomy}} -->
+            <div class="choose">
+                <div class="radio"><img src="../images/symbols-checkbox-null.png" alt=""></div>
+                <span>正常</span>
+            </div>
+            <div class="choose">
+                <div class="radio "><img src="../images/symbols-checkbox-null.png" alt=""></div>
+                <span>偏瘫</span>
+            </div>
+            <div class="choose">
+                <div class="radio "><img src="../images/symbols-checkbox-null.png" alt=""></div>
+                <span>全瘫</span>
+            </div>
+            <div class="choose">
+                <div class="radio "><img src="../images/symbols-checkbox-null.png" alt=""></div>
+                <span>截瘫</span>
+            </div>
+        </div>
+        <div class="list highBloodSugar">
+            <span>高血糖: </span>
+            <!-- TODO {{data.highBloodSugar}} -->
+            <div class="choose">
+                <div class="radio"><img src="../images/symbols-checkbox-null.png" alt=""></div>
+                <span>是</span>
+            </div>
+            <div class="choose">
+                <div class="radio "><img src="../images/symbols-checkbox-null.png" alt=""></div>
+                <span>否</span>
+            </div>
+        </div>
+        <div class="list highBloodPressure">
+            <span>高血压: </span>
+            <!-- TODO {{data.highBloodPressure}} -->
+            <div class="choose">
+                <div class="radio"><img src="../images/symbols-checkbox-null.png" alt=""></div>
+                <span>是</span>
+            </div>
+            <div class="choose">
+                <div class="radio "><img src="../images/symbols-checkbox-null.png" alt=""></div>
+                <span>否</span>
+            </div>
+        </div>
+        <div class="list cardiovascularDisease">
+            <span>心血管疾病: </span>
+            <!-- TODO {{data.cardiovascularDisease}} -->
+            <div class="choose">
+                <div class="radio"><img src="../images/symbols-checkbox-null.png" alt=""></div>
+                <span>是</span>
+            </div>
+            <div class="choose">
+                <div class="radio "><img src="../images/symbols-checkbox-null.png" alt=""></div>
+                <span>否</span>
+            </div>
+        </div>
+        <div class="list highCholesterol">
+            <span>高血脂: </span>
+            <!-- TODO {{data.highCholesterol}} -->
+            <div class="choose">
+                <div class="radio"><img src="../images/symbols-checkbox-null.png" alt=""></div>
+                <span>是</span>
+            </div>
+            <div class="choose">
+                <div class="radio "><img src="../images/symbols-checkbox-null.png" alt=""></div>
+                <span>否</span>
+            </div>
+        </div>
+        <p>备注：<span>{{data.remark}}</span></p>
+    </div>
+</script>
+<script type="text/html" id="tpl">
+    <a href="javascript:history.back(-1)"><span class="iconfont icon-iconfontjiantou1"></span></a>
+    <h3>订单评估表</h3>
+    <p>{{data.orderName}}</p>
+    <p>受益人：<span>{{data.beneficiaryName}}</span></p>
+</script>
+<script src="../lib/template-web.js"></script>
+<script>
+    $(function () {
+        console.log(location.search);
+        let assessmentId = location.search.split("=")[1];
+        console.log(assessmentId);
+        $.ajax({
+            type: "GET",
+            url: ip + "/patient/order/getOrderAssessmentDetail?loginUserCode="+getLoginUserCode(),
+            data: {
+                orderType: 1,
+                assessmentId: assessmentId
+            },
+            dataType: "json",
+            jsonp: "callback",
+            jsonpCallback: "success_jsonpCallback",
+            success: function (data) {
+                console.log(data);
+                $(".assess-info").html(template("info", data));
+                $(".assess-head").html(template("tpl", data));
+                console.log(data.data.autonomy);
+                // 判断自主能力
+                switch (data.data.autonomy) {
+                    case 0:
+                        $(".autonomy .choose").eq(0).find("img").attr("src", "../images/symbols-checkbox.png");
+                        break;
+                    case 1:
+                        $(".autonomy .choose").eq(1).find("img").attr("src", "../images/symbols-checkbox.png");
+                        break;
+                    case 2:
+                        $(".autonomy .choose").eq(2).find("img").attr("src", "../images/symbols-checkbox.png");
+                        break;
+                    case 3:
+                        $(".autonomy .choose").eq(3).find("img").attr("src", "../images/symbols-checkbox.png");
+                        break;
+                }
+                // 高血糖
+                switch (data.data.highBloodSugar) {
+                    case 0:
+                        $(".highBloodSugar .choose").eq(0).find("img").attr("src", "../images/symbols-checkbox.png");
+                        break;
+                    case 1:
+                        $(".highBloodSugar .choose").eq(1).find("img").attr("src", "../images/symbols-checkbox.png");
+                        break;
+                }
+                // 高血压
+                switch (data.data.highBloodPressure) {
+                    case 0:
+                        $(".highBloodPressure .choose").eq(0).find("img").attr("src", "../images/symbols-checkbox.png");
+                        break;
+                    case 1:
+                        $(".highBloodPressure .choose").eq(1).find("img").attr("src", "../images/symbols-checkbox.png");
+                        break;
+                }
+                // 心血管疾病
+                switch (data.data.cardiovascularDisease) {
+                    case 0:
+                        $(".cardiovascularDisease .choose").eq(0).find("img").attr("src", "../images/symbols-checkbox.png");
+                        break;
+                    case 1:
+                        $(".cardiovascularDisease .choose").eq(1).find("img").attr("src", "../images/symbols-checkbox.png");
+                        break;
+                }
+                // 高血脂
+                switch (data.data.highCholesterol) {
+                    case 0:
+                        $(".highCholesterol .choose").eq(0).find("img").attr("src", "../images/symbols-checkbox.png");
+                        break;
+                    case 1:
+                        $(".highCholesterol .choose").eq(1).find("img").attr("src", "../images/symbols-checkbox.png");
+                        break;
+                }
+            }
+        })
+    })
+</script>
+</body>
+</html>

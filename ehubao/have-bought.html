@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,user-scalable=no"/>
+    <link rel="stylesheet" href="css/have-bought.css">
+    <link rel="stylesheet" href="../lib/icon/iconfont.css">
+    <link rel="stylesheet" href="../lib/swiper/swiper.min.css">
+    <script src="../js/common.js"></script>
+    <script src="../lib/jquery/jquery-3.1.1.min.js"></script>
+    <script src="../lib/swiper/swiper.min.js"></script>
+    <script src="js/have-bougth.js"></script>
+    <title>已购买保障</title>
+</head>
+<body>
+<div class="container">
+    <!--头部轮播-->
+    <div class="banner-container swiper-container">
+        <ul class="swiper-wrapper">
+            <li class="banner-slide swiper-slide">
+                <div class="box">
+                    <div class="before"></div>
+                    <div class="wave"></div>
+                    <div class="after"></div>
+                    <div class="plan">
+                        <p><span class="plan-info"></span><span>%</span></p>
+                        <p>保障进度</p>
+                    </div>
+                </div>
+            </li>
+            <li class="banner-slide swiper-slide">
+                <div class="box">
+                    <div class="before"></div>
+                    <div class="wave"></div>
+                    <div class="after"></div>
+                    <div class="plan">
+                        <p><span class="plan-info">29</span><span>%</span></p>
+                        <p>保障进度</p>
+                    </div>
+                </div>
+            </li>
+            <li class="banner-slide swiper-slide">
+                <div class="box">
+                    <div class="before"></div>
+                    <div class="wave"></div>
+                    <div class="after"></div>
+                    <div class="plan">
+                        <p><span class="plan-info">29</span><span>%</span></p>
+                        <p>保障进度</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="swiper-pagination"></div>
+        <h3>我有3份E护宝保障 <a href="#" class="iconfont icon-you"></a></h3>
+    </div>
+    <!--我的权益-->
+    <div class="my-equity">
+        <h3>我的权益</h3>
+        <div class="class">
+            <a href="#"><img src="../images/dianhuayisheng.png" alt=""></a>
+            <a href="#"><img src="../images/jiezheng.png" alt=""></a>
+            <a href="#"><img src="../images/peizheng.png" alt=""></a>
+            <a href="#"><img src="../images/peihu.png" alt=""></a>
+        </div>
+    </div>
+    <!--提供保障-->
+    <div class="number">
+        <!--渲染-->
+    </div>
+    <!--玩转健康生活-->
+    <div class="live">
+        <h3>玩转健康生活</h3>
+        <div></div>
+    </div>
+    <!--益护健康还提供这些-->
+    <div class="live">
+        <h3>益护健康还提供这些</h3>
+        <div></div>
+    </div>
+    <!--陪诊服务-->
+    <div class="server">
+        <h3><span class="left">普优助高端陪诊服务</span><span class="right">专业护理|专家门诊|一对一服务</span></h3>
+        <div></div>
+    </div>
+    <!--更多益护服务-->
+    <a href="../insurance/insurance-details.html" class="more">更多益护服务</a>
+</div>
+<script type="text/html" id="tpl">
+    <h3><span class="left">我为<span>{{data.count}}</span> 个人提供保障中</span><a href="../insurance/safeguard.html" class="iconfont icon-you right"></a></h3>
+    <div class="number-bottom">
+        {{each data.infoList v i}}
+        <div class="item">
+            <img src="../images/Page4.png" alt="">
+            <p>{{data.infoList[i].relationship}}</p>
+        </div>
+        {{/each}}
+    </div>
+</script>
+<script src="../lib/template-web.js"></script>
+</body>
+</html>

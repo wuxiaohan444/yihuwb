@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,user-scalable=no" />
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="lib/icon/iconfont.css">
+    <link rel="stylesheet" href="lib/swiper/swiper.min.css">
+    <script src="lib/jquery/jquery-3.1.1.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="lib/swiper/swiper.min.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=namkYB2AntSWZh6Bs8VUfLo55NhVSeVG"></script>
+    <script src="js/baidumap.js"></script>
+    <script src="js/index.js"></script>
+    <title>首页</title>
+</head>
+<body>
+<div class="container">
+    <!--轮播图-->
+    <div class="banner-container swiper-container">
+        <div class="place">
+            <a href="javascript:;">
+                <span class="iconfont icon-weizhi"></span>
+                <span class="location">上海</span>
+                <span class="iconfont icon-weibiaoti35"></span>
+            </a>
+        </div>
+        <ul class="swiper-wrapper">
+            <li class="banner-slide swiper-slide"><a href="#"><img src="images/banner.png" alt=""></a></li>
+            <li class="banner-slide swiper-slide"><a href="#"><img src="images/banner.png" alt=""></a></li>
+            <li class="banner-slide swiper-slide"><a href="#"><img src="images/banner.png" alt=""></a></li>
+        </ul>
+        <div class="text clearfloat">
+            <span class="one">专业陪护护理</span>
+            <span class="two">24小时为生命护航</span>
+            <span class="three">云生态创新医疗</span>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <!--填写受益人/ 订单状态-->
+    <div class="write">
+        <button >请填写受益人信息</button>
+        <img src="" alt="">
+    </div>
+    <!--分类-->
+    <div class="class">
+        <div class="item clearfloat">
+            <a class="info" href="hospital-inside/hospital-inside.html">
+                <img src="images/yuannei.png" alt="">
+            </a>
+            <a class="info" href="hospital-outside/hospital-outside.html">
+                <img src="images/yuanwai.png" alt="">
+            </a>
+            <a class="info" href="ehubao/have-bought.html">
+                <img src="images/Ehubao.png" alt="">
+            </a>
+            <a class="info" href="#">
+                <img src="images/jinji.png" alt="">
+            </a>
+        </div>
+    </div>
+    <!--人气-->
+    <div class="hot">
+        <h3>超具人气</h3>
+        <div class="card-box">
+            <ul>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+            </ul>
+        </div>
+    </div>
+    <!--新标杆-->
+    <div class="tagline">
+        <h2>建立护理行业新标杆</h2>
+        <p>We Redefine Patients'</p>
+        <p>本平台由上海益护健康管理有限公司提供技术服务</p>
+    </div>
+    <!--底部-->
+    <div class="foot">
+        <a href="index.html">
+            <div class="icon icon-one"></div>
+            <p class="text-one">首页</p>
+        </a>
+        <a href="https://shequ.yunzhijia.com/thirdapp/forum/network/5a7c24d9e4b0f860421d9704">
+            <div class="icon icon-two"></div>
+            <p>e护社区</p>
+        </a>
+        <a href="order/order-index.html">
+            <div class="icon icon-three"></div>
+            <p>订单</p>
+        </a>
+        <a href="personage.html">
+            <div class="icon icon-five"></div>
+            <p>我的</p></a>
+    </div>
+</div>
+<script type="text/html" id="tpl"></script>
+<script src="lib/template-web.js"></script>
+</body>
+</html>

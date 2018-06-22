@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,user-scalable=no" />
+    <link rel="stylesheet" href="css/complaint.css">
+    <link rel="stylesheet" href="../lib/icon/iconfont.css">
+    <script src="../lib/jquery/jquery-3.1.1.min.js"></script>
+    <title>投诉反馈FAQ</title>
+</head>
+<body>
+<div class="container">
+    <div class="rule-head">
+        <a href="javascript:history.back(-1)"><span class="iconfont icon-iconfontjiantou1"></span></a>
+        <h3>投诉反馈FQ</h3>
+    </div>
+    <!--主要规则-->
+    <div class="rule-main">
+        <div class="rule-item">
+            <div class="rule-title">
+                <span class="left">1、如何申请退款?</span>
+                <span class="iconfont icon-xiangshang right"></span>
+            </div>
+            <div class="rule-content">
+                <p>操作步骤：</p>
+                <p>(1)电话联系护工经理</p>
+                <p>(2)提供您想退款的订单编号</p>
+                <p>(3)2个工作日内将有工作人员上门为您处理,确认之后护工经理将发动竭</p>
+                <p>温馨提示:</p>
+                <p>若操作失败请拨打95093093客服电话咨询</p>
+            </div>
+        </div>
+        <div class="rule-item">
+            <div class="rule-title">
+                <span class="left">2、如何取消订单?</span>
+                <span class="iconfont icon-xiangshang right"></span>
+            </div>
+            <div class="rule-content">
+                <p>操作步骤：</p>
+                <p>1.电话联系护工经理</p>
+                <p>2.提供您想取消的订单编号</p>
+                <p>3.确认之后护工经理将为您取消订单温馨提示</p>
+                <p>温馨提示:</p>
+                <p>若操作失败请拨打95093093客服电话咨询</p>
+            </div>
+        </div>
+        <div class="rule-item">
+        <div class="rule-title">
+            <span class="left">3、申请退款后,钱款将退回到哪里?</span>
+            <span class="iconfont icon-xiangshang right"></span>
+        </div>
+        <div class="rule-content">
+            <p>温馨提示:</p>
+            <p>1.工作人员为您上门处理后,您的钱款将以原路径返</p>
+            <p>2.若存在疑问请拨打95093093客服电话咨询</p>
+        </div>
+    </div>
+        <div class="rule-item">
+            <div class="rule-title">
+                <span class="left">4、如何评价订单?</span>
+                <span class="iconfont icon-xiangshang right"></span>
+            </div>
+            <div class="rule-content">
+                <p>操作步骤</p>
+                <p>1.点击下方菜单【订单】-【待评价】</p>
+                <p>2.点击您想评价的订单,进入订单详情页完成评价</p>
+                <p>温馨提示:</p>
+                <p>1.若存在疑问请拨打95093093客服电话咨询</p>
+            </div>
+        </div>
+        <div class="rule-item">
+            <div class="rule-title">
+                <span class="left">5、如何打赏护工?</span>
+                <span class="iconfont icon-xiangshang right"></span>
+            </div>
+            <div class="rule-content">
+                <p>操作步骤</p>
+                <p>1.点击下方菜单【订单】-【待评价】</p>
+                <p>2.点击您想评价的订单,进入订单详情页点击【打赏】即可</p>
+                <p>温馨提示:</p>
+                <p>1.若存在疑问请拨打95093093客服电话咨询</p>
+            </div>
+        </div>
+        <div class="rule-item">
+            <div class="rule-title">
+                <span class="left">6、如何更换护工?</span>
+                <span class="iconfont icon-xiangshang right"></span>
+            </div>
+            <div class="rule-content">
+                <p>操作步骤</p>
+                <p>1.电话联系护工经理</p>
+                <p>2.提供您想更换护工的订单编号和原因</p>
+                <p>确认之后护工经理将为您更换护工</p>
+                <p>温馨提示:</p>
+                <p>1.若存在疑问请拨打95093093客服电话咨询</p>
+            </div>
+        </div>
+    </div>
+    <!--底部-->
+    <div class="foot">
+        <a href="../index.html">
+            <div class="icon icon-one"></div>
+            <p class="text-one">首页</p>
+        </a>
+        <a href="../ehubao/have-bought.html">
+            <div class="icon icon-two"></div>
+            <p>e护社区</p>
+        </a>
+        <a href="../order/order-index.html">
+            <div class="icon icon-three"></div>
+            <p>订单</p>
+        </a>
+        <a href="../personage.html">
+            <div class="icon icon-five"></div>
+            <p class="text-five" style="color: #88B2DE;">我的</p></a>
+    </div>
+</div>
+<script type="text/javascript">
+    for (let i = 0; i < $(".rule-item").length; i++) {
+        $(".rule-item .iconfont").eq(i).on("click",function () {
+            if($(this).hasClass("icon-xiangshang")){
+                $(this).addClass("icon-weibiaoti35").removeClass("icon-xiangshang");
+                $(".rule-content").eq(i).hide();
+            }else{
+                $(this).addClass("icon-xiangshang").removeClass("icon-weibiaoti35");
+                $(".rule-content").eq(i).show();
+            }
+        })
+    }
+</script>
+</body>
+</html>

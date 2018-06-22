@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,user-scalable=no"/>
+    <link rel="stylesheet" href="css/assess.css">
+    <link rel="stylesheet" href="../lib/icon/iconfont.css">
+    <script src="../js/common.js"></script>
+    <script src="../lib/jquery/jquery-3.1.1.min.js"></script>
+    <script src="js/assess.js"></script>
+    <title>我的评估</title>
+</head>
+<body>
+<div class="container">
+    <div class="assess-head">
+
+    </div>
+    <!--记录-->
+    <div class="assess-record">
+        <!--渲染-->
+    </div>
+    <!--底部-->
+    <div class="foot">
+        <a href="../index.html">
+            <div class="icon icon-one"></div>
+            <p class="text-one">首页</p>
+        </a>
+        <a href="../ehubao/have-bought.html">
+            <div class="icon icon-two"></div>
+            <p>e护社区</p>
+        </a>
+        <a href="../order/order-index.html">
+            <div class="icon icon-three"></div>
+            <p>订单</p>
+        </a>
+        <a href="../personage.html">
+            <div class="icon icon-five"></div>
+            <p class="text-five" style="color: #88B2DE">我的</p></a>
+    </div>
+</div>
+<script type="text/html" id="tpl">
+    {{each data.childList1 value i}}
+    <a class="assess-record-item" href="my-assess(inside).html?assessmentId={{data.childList1[i].assessmentId}}">
+        <div class="item-left"><span>骨科一对一服务</span>-<span>不能自理</span></div>
+        <div class="item-right">受益人：<span>{{data.childList1[i].beneficiaryName
+}}</span></div>
+    </a>
+    {{/each}}
+
+    {{each data.childList2 value i}}
+    <a class="assess-record-item" href="my-assess(outside).html?assessmentId={{data.childList2[i].assessmentId}}">
+        <div class="item-left"><span>优享护工</span>-<span>家庭护理</span></div>
+        <div class="item-right">受益人：<span>{{data.childList2[i].beneficiaryName
+}}</span></div>
+    </a>
+    {{/each}}
+
+    {{each data.childList3 value i}}
+    <a class="assess-record-item" href="my-assess(E-hubao).html?assessmentId={{data.childList3[i].assessmentId}}">
+        <div class="item-left"><span>E护宝</span></div>
+        <div class="item-right">受益人：<span>{{data.childList3[i].beneficiaryName
+}}</span></div>
+    </a>
+    {{/each}}
+
+</script>
+<script type="text/html" id="tpl2">
+    <a class="assess-arrow" href="javascript:history.back(-1)"> <span class="iconfont icon-iconfontjiantou1"></span></a>
+    <img src="" alt="">
+    <p>{{data.customerName}}<span>{{data.count}}</span>份评估报表</p>
+</script>
+<script src="../lib/template-web.js"></script>
+</body>
+</html>

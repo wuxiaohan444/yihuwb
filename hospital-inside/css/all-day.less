@@ -1,0 +1,465 @@
+@import "../../css/common";
+//头部
+.all-head {
+  width: 100%;
+  height: 300rem/@num;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  .history {
+    position: absolute;
+    width: 72rem/@num;
+    height: 72rem/@num;
+    top: 20rem/@num;
+    left: 20rem/@num;
+    background: rgba(255, 255, 255, .75);
+    border-radius: 50%;
+    line-height: 72rem/@num;
+    text-align: center;
+    font-weight: 700;
+    color: #B4B4B5;
+    z-index: 999;
+    span {
+      font-size: 38rem/@num;
+    }
+  }
+  ul {
+    position: absolute;
+    width: 300%;
+    height: 100%;
+    li {
+      width: 33.33%;
+      height: 100%;
+      float: left;
+      img {
+        width: 100%;
+        height: 400rem/@num;
+      }
+    }
+  }
+  .swiper-pagination{
+    margin-bottom: 10rem/@num;
+    span{
+      width: 20rem/@num;
+      height: 20rem/@num;
+      background: #FFFFFF;
+    }
+    .swiper-pagination-bullet{
+      background: #CED4DA;
+      opacity: 1;
+    }
+    .swiper-pagination-bullet-active{
+      opacity: 1;
+      background: #FFFFFF;
+    }
+  }
+}
+
+//优享护工
+.clauses {
+  position: relative;
+  padding: 20rem/@num;
+  box-sizing: border-box;
+  border-radius: 15rem/@num 15rem/@num 0 0;
+  margin-top: -20rem/@num;
+  z-index: 999;
+  background: white;
+  border-bottom: 20rem/@num solid #EEF3F8;
+  h3 {
+    font-size: 32rem/@num;
+    padding-bottom: 20rem/@num;
+  }
+  .clauses-left {
+    float: left;
+    color: #FF854F;
+    font-size: 36rem/@num;
+    .day {
+      font-size: 24rem/@num;
+    }
+  }
+  .clauses-right {
+    float: right;
+    color: #C6C6C6;
+    font-size: 24rem/@num;
+  }
+}
+
+//历史评价
+.count-evaluate {
+  padding: 20rem/@num;
+  box-sizing: border-box;
+  padding-bottom: 0;
+  .count {
+    width: 100%;
+    border-bottom: 1px solid #D8DEE1;
+    .grade {
+      float: left;
+      font-size: 20rem/@num;
+      color: #B4B4B5;
+      .history-count {
+        font-size: 36rem/@num;
+        color: #33383D;
+      }
+      span {
+        color: #88B2DE;
+        font-size: 48rem/@num;
+        vertical-align: middle;
+      }
+    }
+    .count-right {
+      float: right;
+      line-height: 50rem/@num;
+      font-size: 24rem/@num;
+      color: #b4b4b5;
+      span {
+        color: #33383D;
+      }
+      .icon-you {
+        vertical-align: middle;
+      }
+    }
+    .grade-bottom {
+      float: left;
+      width: 100%;
+    }
+
+    .star {
+      padding: 20rem/@num 0;
+      font-size: 24rem/@num;
+      color: #B4B4B5;
+      span {
+        color: #F5DE46;
+        font-size: 36rem/@num;
+      }
+    }
+    .hg-server {
+      float: left;
+    }
+    .server-content {
+      float: right;
+    }
+  }
+}
+
+//评价
+.evaluate {
+  padding: 0 20rem/@num;
+  box-sizing: border-box;
+  border-bottom: 20rem/@num solid #ECF1F7;
+  .evaluate-item {
+    padding: 20rem/@num 0;
+    .item-title {
+      height: 64rem/@num;
+      .title-left {
+        float: left;
+        color: #B4B4B5;
+        font-size: 20rem/@num;
+        span {
+          color: #CFD6DB;
+        }
+      }
+      .title-right {
+        float: right;
+        color: #B4B4B5;
+        font-size: 20rem/@num;
+      }
+    }
+    p {
+      font-size: 24rem/@num;
+    }
+    img {
+      width: 123rem/@num;
+      height: 123rem/@num;
+      border-radius: 15rem/@num;
+      margin-top: 30rem/@num;
+    }
+  }
+}
+
+//tab栏
+.all-tab {
+  display: flex;
+  border-bottom: 1px solid #EEF3F8;
+  font-size: 28rem/@num;
+  text-align: center;
+  line-height: 70rem/@num;
+  div {
+    flex: 1;
+    margin: 0 20rem/@num;
+    color: #7D919D;
+  }
+  .active {
+    border-bottom: 4rem/@num solid #88B2DE;
+  }
+}
+
+//主要部分
+.all-main {
+  padding: 50rem/@num;
+  box-sizing: border-box;
+  //24小时
+  .whole-journey {
+    text-align: center;
+    h2 {
+      font-size: 60rem/@num;
+      font-weight: 700;
+      padding-bottom: 10rem/@num;
+    }
+    p {
+      font-size: 36rem/@num;
+      padding-bottom: 50rem/@num;
+      span {
+        font-weight: 700;
+      }
+    }
+    img {
+      width: 100%;
+      height: 400rem/@num;
+    }
+  }
+  //突破
+  .break {
+    width: 100%;
+  }
+  //压力大
+  .pressure {
+    width: 100%;
+    height: 425rem/@num;
+    background-size: 100% 425rem/@num;
+    text-align: center;
+    font-size: 36rem/@num;
+    padding-top: 100rem/@num;
+    box-sizing: border-box;
+    color: white;
+    img{
+      width: 100%;
+    }
+    p {
+      line-height: 70rem/@num;
+    }
+  }
+  //帮您解决
+  .solve {
+    margin-top: 130rem/@num;
+    text-align: center;
+    h2 {
+      font-size: 60rem/@num;
+      font-weight: 700;
+      padding-bottom: 10rem/@num;
+    }
+    h3 {
+      font-size: 36rem/@num;
+      padding-bottom: 50rem/@num;
+    }
+    p {
+      font-size: 26rem/@num;
+      line-height: 50rem/@num;
+      text-align: left;
+      color: #7F7F7F;
+      padding-bottom: 20rem/@num;
+    }
+  }
+  //.制度与条例
+  .system {
+    .system-item {
+      text-align: center;
+      .item-title {
+        color: white;
+        background: linear-gradient(to right, #88B2DE, #A7D8EA);
+        height: 90rem/@num;
+        line-height: 90rem/@num;
+        text-align: left;
+        .number {
+          font-size: 50rem/@num;
+          vertical-align: middle;
+        }
+        span {
+          font-size: 36rem/@num;
+        }
+      }
+      h3 {
+        font-size: 36rem/@num;
+        text-align: center;
+        padding: 30rem/@num 0;
+      }
+      p {
+        color: #7F7F7F;
+        font-size: 26rem/@num;
+        line-height: 50rem/@num;
+        text-align: left;
+        padding-bottom: 20rem/@num;
+      }
+      .one {
+        width: 80%;
+        height: 435rem/@num;
+      }
+      .two {
+        width: 100%;
+      }
+    }
+  }
+}
+
+//服务详情
+.server-details {
+  border-top: 20rem/@num solid #EEF3F8;
+  padding: 40rem/@num;
+  box-sizing: border-box;
+  position: relative;
+  .line {
+    position: absolute;
+    left: 53rem/@num;
+    top: 0;
+    height: 100%;
+    width: 3rem/@num;
+    background: #E1E1E1;
+    z-index: -1;
+  }
+  .date {
+    color: #b4b4b5;
+    font-size: 20rem/@num;
+    border-bottom: 1px dashed #E6E6E6;
+    text-align: right;
+    padding-bottom: 10rem/@num;
+  }
+  .work:before {
+    content: "";
+    display: inline-block;
+    width: 20rem/@num;
+    height: 20rem/@num;
+    border: 2px solid #8EB6E0;
+    border-radius: 50%;
+    z-index: 999;
+    background: white;
+    vertical-align: top;
+  }
+  .work {
+    font-size: 26rem/@num;
+    margin-top: 30rem/@num;
+    .time {
+      padding-right: 30rem/@num;
+    }
+    .note {
+      background: #ECF2F8;
+      color: #879AA5;
+      width: 410rem/@num;
+      margin: 0 auto;
+      font-size: 20rem/@num;
+      line-height: 60rem/@num;
+      border-radius: 15rem/@num;
+      padding-left: 20rem/@num;
+      box-sizing: border-box;
+    }
+    img {
+      width: 354rem/@num;
+      height: 189rem/@num;
+      border-radius: 15rem/@num;
+      margin-left: 150rem/@num;
+    }
+  }
+
+}
+
+//费用说明
+.cost {
+  border-top: 20rem/@num solid #ECF1F7;
+  padding: 40rem/@num;
+  box-sizing: border-box;
+  h3 {
+    font-size: 28rem/@num;
+    padding-bottom: 20rem/@num;
+  }
+  p {
+    font-size: 20rem/@num;
+    color: #B4B4B5;
+    line-height: 50rem/@num;
+  }
+}
+
+//宣传语
+.tagline {
+  width: 100%;
+  height: 195rem/@num;
+  background-color: #EEF3F8;
+  color: #CFD6DB;
+  text-align: center;
+  margin-bottom: 100rem/@num;
+  h2 {
+    font-size: 36rem/@num;
+    font-weight: 500;
+    padding-top: 30rem/@num;
+  }
+  p {
+    font-size: 28rem/@num;
+    line-height: 50rem/@num;
+  }
+}
+
+//立即预定
+.reserve {
+  width: 100%;
+  height: 100rem/@num;
+  background: #F6F7F8;
+  position: fixed;
+  bottom: 0;
+  box-shadow: 0 -3px 14px 0 rgba(56, 93, 142, 0.12);
+  .price {
+    float: left;
+    width: 22.5%;
+    height: 100%;
+    color: #7D919D;
+    text-align: center;
+    position: relative;
+    span {
+      position:absolute;
+      top: 18rem/@num;
+      font-size: 45rem/@num;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    p {
+      position: absolute;
+      top: 60rem/@num;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 20rem/@num;
+      padding-bottom: 10rem/@num;
+    }
+  }
+
+  .server {
+    float: left;
+    width: 22.5%;
+    height: 100%;
+    color: #7D919D;
+    text-align: center;
+    position: relative;
+    border-right: 2rem/@num solid #E9EFF6;
+    box-sizing: border-box;
+    span {
+      position:absolute;
+      top: 20rem/@num;
+      font-size: 40rem/@num;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    p {
+      position: absolute;
+      top: 60rem/@num;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 20rem/@num;
+      padding-bottom: 10rem/@num;
+    }
+  }
+
+  .immediately {
+    float: left;
+    height: 100%;
+    width: 55%;
+    background: linear-gradient(to right, #26C3BA, #82ECBB);
+    text-align: center;
+    color: white;
+    line-height: 100rem/@num;
+  }
+}

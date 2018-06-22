@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,user-scalable=no" />
+    <link rel="stylesheet" href="css/await-evaluate.css">
+    <link rel="stylesheet" href="../lib/icon/iconfont.css">
+    <script src="../lib/jquery/jquery-3.1.1.min.js"></script>
+    <script src="../lib/clipboard.min.js"></script>
+    <script src="js/order.js"></script>
+    <title>服务中</title>
+</head>
+<body>
+<div class="container">
+    <!--头部-->
+    <div class="head">
+        <a href="javascript:history.back(-1)" class="iconfont icon-iconfontjiantou1"></a>
+        <h3>订单状态：<span>服务中</span></h3>
+        <div class="state">
+            <i></i>
+            <div class="state-item">
+                <div class="circle">
+                    <div class="ing now"></div>
+                </div>
+                <p>付款</p>
+            </div>
+            <div class="state-item server">
+                <div class="circle">
+                    <div class="ing"></div>
+                </div>
+
+                <p>服务</p>
+            </div>
+            <div class="state-item">
+                <div class="circle">
+                    <div class="ing"></div>
+                </div>
+                <p>评价</p>
+            </div>
+        </div>
+    </div>
+    <!--受益人信息-->
+    <div class="info-man">
+        <h2>受益人信息</h2>
+        <div class="man-bottom clearfloat">
+            <p>被护理人：<span>{{data.customerRelationship.name}}</span></p>
+            <p>电话：<span>{{data.customerRelationship.phone}}</span></p>
+            <p>护工等级：<span>{{data.hopeNurseLevel}}</span></p>
+            <p>护工性别：<span>{{data.hopeNurseSex}}</span></p>
+            <p>服务地址：<span>{{data.city}}-{{data.county}}-{{data.address}}</span></p>
+        </div>
+    </div>
+    <!--订单信息-->
+    <div class="info-order">
+        <h2>订单信息</h2>
+        {{if(data.orderInfoList2[0].length!==0)}}
+        <div class="item">
+            <div class="order-title">
+                <p class="name">{{data.groupPieceName}}</p>
+                <img src="../images/计件.png" alt="">
+                <!-- TODO 合计金额 -->
+                <p>合计：<span class="new">￥{{}}</span><span class="old">￥{{}}</span></p>
+            </div>
+            <div class="order-bottom">
+                <!--详细-->
+                {{each data.orderInfoList2 as value i}}
+                <div class="list clearfloat">
+                    <p class="left">{{data.orderInfoList2[i].productName}}</p>
+                    <p class="right"><span style="color:#ff9465;">￥{{data.orderInfoList2[i].rebatePrice}}<span style="color: #D8DEE1;">￥{{data.orderInfoList2[i].price}}</span><span
+                            style="color: #B4B4B5"> ×{{data.orderInfoList2[i].count}}</span></span></p>
+                </div>
+                <!--                <div class="list clearfloat">
+                                    <p class="left">骨科基础护理</p>
+                                    <p class="right"><span style="color:#ff9465;">￥160<span style="color: #D8DEE1;">￥200</span><span
+                                            style="color:#B4B4B5"> ×1</span></span></p>
+                                </div>
+                -->
+                <!--TODO 红包-->
+                {{if(data.orderInfoList2[i].couponName !== "" || data.orderInfoList2[i].discountPrice !== "")}}
+                <div class="red-packet">
+                    <div class="red-left"><span class="iconfont icon-hongbao-m"></span>
+                        <span>益护优惠券</span>
+                    </div>
+                    <!--<div class="red-right"><span>50元现金抵用券</span><span class="iconfont icon-you" style="color: #e8e8e8"></span></div>-->
+                    <div class="red-right"><span>{{data.orderInfoList2[i].couponName}}</span><span class="iconfont icon-you" style="color: #e8e8e8"></span></div>
+                </div>
+                {{/if}}
+                {{/each}}
+            </div>
+        </div>
+        {{/if}}
+        {{if(data.orderInfoList1[0].length!==0)}}
+        <div class="item">
+            <div class="order-title">
+                <p class="name">{{data.groupTimeName}}</p>
+                <img src="../images/计时copy.png" alt="">
+                <p>合计：<span class="new">￥{{data.orderInfoList1[0].realPrice * data.orderInfoList1[0].count - data.orderInfoList1[0].discountPrice}}</span><span class="old">￥{{data.orderInfoList1[0].price * data.orderInfoList1[0].count}}</span></p>
+                <div class="order-bottom">
+                    <!--详细-->
+                    <div class="list clearfloat">
+                        <p class="left">服务时间：{{data.beginTime}}至{{data.endTime}}</p>
+                        <p class="right"><span style="color:#ff9465;">￥{{data.orderInfoList1[0].realPrice}}<span style="color: #D8DEE1;">￥{{data.orderInfoList1[0].price}}</span><span
+                                style="color: #B4B4B5"> ×1</span></span></p>
+                    </div>
+                </div>
+                <!--TODO 红包-->
+                {{if(data.couponName !== "" || data.discountPrice !== "")}}
+                <div class="red-packet">
+                    <div class="red-left"><span class="iconfont icon-hongbao-m"></span>
+                        <span>益护优惠券</span>
+                    </div>
+                    <!--<div class="red-right"><span>50元现金抵用券</span><span class="iconfont icon-you" style="color: #e8e8e8"></span></div>-->
+                    <div class="red-right"><span>{{data.orderInfoList1[0].couponName}}</span><span class="iconfont icon-you" style="color: #e8e8e8"></span></div>
+                </div>
+                {{/if}}
+            </div>
+        </div>
+        {{/if}}
+        <!--查询订单评估表-->
+        <div class="red-packet">
+            <!-- TODO 跳转评估表页面 assessmentId -->
+            <span>查看订单评估表</span>
+        </div>
+    </div>
+    <!--订单编号-->
+    <div class="info-number">
+        <div class="content">
+            <p>订单编号 &nbsp;&nbsp;<span>{{data.orderNo}}</span></p>
+            <p>订单时间 &nbsp;&nbsp;<span>{{data.createTime}}</span></p>
+            <p>支付时间 &nbsp;&nbsp;<span>{{data.payResultTime}}</span></p>
+            {{if(data.payType===1 || data.payType===2)}}
+            <p>支付方式 &nbsp;&nbsp;<span>线上支付</span></p>
+            {{else}}
+            <p>支付方式 &nbsp;&nbsp;<span>线下支付</span></p>
+            {{/if}}
+        </div>
+        <button class="copy">复制</button>
+    </div>
+    <!--新标杆-->
+    <div class="tagline">
+        <h2>建立护理行业新标杆</h2>
+        <p>We Redefine Patients'</p>
+        <p>本平台由上海益护健康管理有限公司提供技术服务</p>
+    </div>
+    <!--底部-->
+    <div class="foot">
+        <a href="../index.html">
+            <div class="icon icon-one"></div>
+            <p class="text-one">首页</p>
+        </a>
+        <a href="../ehubao/have-bought.html">
+            <div class="icon icon-two"></div>
+            <p>e护社区</p>
+        </a>
+        <a href="order-index.html">
+            <div class="icon icon-three"></div>
+            <p style="color:#88B2DE;">订单</p>
+        </a>
+        <a href="../personage.html">
+            <div class="icon icon-five"></div>
+            <p>我的</p></a>
+    </div>
+</div>
+<script>
+    $(function () {
+       $(".red-packet span").on("click",function () {
+           window.location.href="../personage/my-assess(inside).html"
+       })
+    })
+</script>
+</body>
+</html>

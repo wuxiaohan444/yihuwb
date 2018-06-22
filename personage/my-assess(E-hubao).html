@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,user-scalable=no" />
+    <link rel="stylesheet" href="css/my-assess(E-hubao).css">
+    <link rel="stylesheet" href="../lib/icon/iconfont.css">
+    <script src="../lib/jquery/jquery-3.1.1.min.js"></script>
+    <script src="../js/common.js"></script>
+    <title>订单评估-E护宝</title>
+</head>
+<body>
+<div class="container">
+    <!--头部-->
+    <div class="assess-head">
+        <a href="javascript:history.back(-1)"><span class="iconfont icon-iconfontjiantou1"></span></a>
+        <h3>订单评估表</h3>
+        <p>E护宝</p>
+        <p>受益人：<span>{{data.beneficiaryName}}</span></p>
+    </div>
+    <!--信息-->
+    <div class="assess-info">
+     <!--渲染-->
+    </div>
+
+    <!--新标杆-->
+    <div class="tagline">
+        <h2>建立护理行业新标杆</h2>
+        <p>We Redefine Patients'</p>
+        <p>本平台由上海益护健康管理有限公司提供技术服务</p>
+    </div>
+</div>
+<script type="text/html" id="info">
+    <div class="info-item">
+        <p>血型：<span>{{data.bloodType}}</span></p>
+        <p>常住地址：<span>{{data.city}}-{{data.county}}-{{data.address}}</span></p>
+        <p>居委会/街道办名称：<span>{{data.streetOfficeName}}</span></p>
+        <p>居委会/街道办电话：<span>{{data.streetOfficePhone}}</span></p>
+        <p>保障开始日期：<span>{{data.insuranceBeginTime}}</span></p>
+        <p>保障结束日期：<span>{{data.insuranceEndTime}}</span></p>
+    </div>
+    <div class="info-item">
+        <p>既往病史：<span>{{data.historyDisease}}</span></p>
+        <p>过敏史：<span>{{data.historyAllergy}}</span></p>
+    </div>
+    {{each data.infoList as value i}}
+    <div class="info-item">
+        <p>紧急联系人姓名：<span>{{data.infoList[i].name}}</span></p>
+        <p>紧急联系人电话：<span>{{data.infoList[i].phone}}</span></p>
+        <p>紧急联系人关系：<span>{{data.infoList[i].relationship}}</span></p>
+    </div>
+    {{/each}}
+</script>
+<script type="text/html" id="tpl">
+    <a href="javascript:history.back(-1)"><span class="iconfont icon-iconfontjiantou1"></span></a>
+    <h3>订单评估表</h3>
+    <p>{{data.orderName}}</p>
+    <p>受益人：<span>{{data.beneficiaryName}}</span></p>
+</script>
+<script src="../lib/template-web.js"></script>
+<script>
+    $(function () {
+        console.log(location.search);
+        let assessmentId = location.search.split("=")[1];
+        console.log(assessmentId);
+        $.ajax({
+            type: "GET",
+            url: ip + "/patient/order/getOrderAssessmentDetail?loginUserCode="+getLoginUserCode(),
+            data: {
+                orderType: 3,
+                assessmentId: assessmentId
+            },
+            dataType: "json",
+            jsonp: "callback",
+            jsonpCallback: "success_jsonpCallback",
+            success: function (data) {
+                console.log(data);
+                $(".assess-info").html(template("info", data));
+                $(".assess-head").html(template("tpl", data));
+            }
+        })
+    })
+</script>
+</body>
+</html>

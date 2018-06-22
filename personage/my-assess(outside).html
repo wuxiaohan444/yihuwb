@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,user-scalable=no"/>
+    <link rel="stylesheet" href="../lib/icon/iconfont.css">
+    <link rel="stylesheet" href="css/my-assess(outside).css">
+    <script src="../lib/jquery/jquery-3.1.1.min.js"></script>
+    <script src="../js/common.js"></script>
+    <title>订单评估-院外</title>
+</head>
+<body>
+<div class="container">
+    <!--头部-->
+    <div class="assess-head">
+        <a href="javascript:history.back(-1)"><span class="iconfont icon-iconfontjiantou1"></span></a>
+        <h3>订单评估表</h3>
+        <p>{{data.orderName}}</p>
+        <p>受益人：<span>{{data.beneficiaryName}}</span></p>
+    </div>
+    <!--信息-->
+    <div class="assess-info">
+
+        <!--渲染-->
+    </div>
+
+    <div class="case">
+        <img src="../images/上传.jpg" alt="">
+        <span>未上传病例</span>
+    </div>
+
+    <!--新标杆-->
+    <div class="tagline">
+        <h2>建立护理行业新标杆</h2>
+        <p>We Redefine Patients'</p>
+        <p>本平台由上海益护健康管理有限公司提供技术服务</p>
+    </div>
+</div>
+<script type="text/html" id="info">
+    <div class="info-item">
+        <p>城市地区：<span>{{data.city}}-{{data.county}}</span></p>
+        <p>详细地址：<span>{{data.address}}</span></p>
+        <div class="item-class clearfloat">
+            <p>居住情况：<span>{{data.liveStatus}}</span></p>
+            <p>出行方式：<span>{{data.travelMode}}</span></p>
+        </div>
+        <p>所属居委会联系方式：<span>{{data.contactWay}}</span></p>
+        {{each data.urgentContacts as value i}}
+        <p>紧急联系人：<span>{{data.urgentContacts[i].contactName}}</span></p>
+        <p>紧急联系人电话：<span>{{data.urgentContacts[i].contactPhone}}</span></p>
+        {{/each}}
+    </div>
+    <div class="info-item">
+        <p>既往病史：<span>{{data.diseaseHistory}}</span></p>
+        <p>过敏药物或食物：<span>{{data.allergyHistory}}</span></p>
+        <p>家庭遗传及传染病史：<span>{{data.geneticDisease}}</span></p>
+        <p>重要辅助检查：<span>{{data.aidExamine}}</span></p>
+        <p>心电图：<img src="{{data.casePic}}" alt=""> </p>
+    </div>
+    <div class="info-item">
+        <div class="power">
+            自理能力
+        </div>
+        <!--对号-->
+        <div class="list clearfloat eating">
+            <span>进食: </span>
+            <!-- TODO {{data.eating}} -->
+            <div class="choose">
+                <div class="radio"><img src="../images/symbols-checkbox-null.png" alt=""></div>
+                <span>自理</span>
+            </div>
+            <div class="choose">
+                <div class="radio "><img src="../images/symbols-checkbox-null.png" alt=""></div>
+                <span>部分需要帮助</span>
+            </div>
+            <div class="choose">
+                <div class="radio "><img src="../images/symbols-checkbox-null.png" alt=""></div>
+                <span>依赖</span>
+            </div>
+        </div>
+        <div class="list clearfloat bath">
+            <span>洗澡: </span>
+            <!-- TODO {{data.bath}} -->
+            <div class="choose">
+                <div class="radio"><img src="../images/symbols-checkbox-null.png" alt=""></div>
+                <span>自理</span>
+            </div>
+            <div class="choose">
+                <div class="radio "><img src="../images/symbols-checkbox-null.png" alt=""></div>
+                <span>依赖</span>
+            </div>
+        </div>
+        <div class="list clearfloat retouch">
+            <p>修饰(洗脸、刷牙、刮胡子、梳头): </p>
+            <!-- TODO {{data.retouch}} -->
+            <div class="choose">
+                <div class="radio"><img src="../images/symbols-checkbox-null.png" alt=""></div>
+                <span>自理</span>
+            </div>
+            <div class="choose">
+                <div class="radio "><img src="../images/symbols-checkbox-null.png" alt=""></div>
+                <span>依赖</span>
+            </div>
+        </div>
+        <div class="list clearfloat garb">
+            <p>穿衣(解系纽扣、拉链、穿鞋): </p>
+            <!-- TODO {{data.garb}} -->
+            <div class="choose">
+                <div class="radio"><img src="../images/symbols-checkbox-null.png" alt=""></div>
+                <span>自理</span>
+            </div>
+            <div class="choose">
+                <div class="radio "><img src="../images/symbols-checkbox-null.png" alt=""></div>
+                <span>部分需要帮助</span>
+            </div>
+            <div class="choose">
+                <div class="radio "><img src="../images/symbols-checkbox-null.png" alt=""></div>
+                <span>依赖</span>
+            </div>
+        </div>
+        <div class="list clearfloat controlStool">
+            <span>控制大便: </span>
+            <!-- TODO {{data.controlStool}} -->
+            <div class="choose">
+                <div class="radio"><img src="../images/symbols-checkbox-null.png" alt=""></div>
+                <span>能控制</span>
+            </div>
+            <div class="choose">
+                <div class="radio "><img src="../images/symbols-checkbox-null.png" alt=""></div>
+                <span>失禁或需灌肠</span>
+            </div>
+            <br>
+            <div class="choose">
+                <div class="radio "><img src="../images/symbols-checkbox-null.png" alt=""></div>
+                <span>偶有失禁、每周小于1次失控</span>
+            </div>
+        </div>
+        <div class="list clearfloat controlUrine">
+            <span>控制小便: </span>
+            <!-- TODO {{data.controlUrine}} -->
+            <div class="choose">
+                <div class="radio"><img src="../images/symbols-checkbox-null.png" alt=""></div>
+                <span>能控制</span>
+            </div>
+            <div class="choose">
+                <div class="radio "><img src="../images/symbols-checkbox-null.png" alt=""></div>
+                <span>失禁或需插尿管不能自理</span>
+            </div>
+            <br>
+            <div class="choose">
+                <div class="radio "><img src="../images/symbols-checkbox-null.png" alt=""></div>
+                <span>偶有失禁、24小时小于1次失控</span>
+            </div>
+        </div>
+    </div>
+</script>
+<script type="text/html" id="tpl">
+    <a href="javascript:history.back(-1)"><span class="iconfont icon-iconfontjiantou1"></span></a>
+    <h3>订单评估表</h3>
+    <p>{{data.orderName}}</p>
+    <p>受益人：<span>{{data.beneficiaryName}}</span></p>
+</script>
+<script src="../lib/template-web.js"></script>
+<script>
+    $(function () {
+        console.log(location.search);
+        let assessmentId = location.search.split("=")[1];
+        console.log(assessmentId);
+        $.ajax({
+            type: "GET",
+            url: ip + "/patient/order/getOrderAssessmentDetail?loginUserCode="+getLoginUserCode(),
+            data: {
+                orderType: 2,
+                assessmentId: assessmentId
+            },
+            dataType: "json",
+            jsonp: "callback",
+            jsonpCallback: "success_jsonpCallback",
+            success: function (data) {
+                console.log(data);
+                $(".assess-info").html(template("info", data));
+                $(".assess-head").html(template("tpl", data));
+                console.log(data.data.eating);
+                // 进食
+                switch (data.data.eating) {
+                    case 0:
+                        $(".eating .choose").eq(0).find("img").attr("src", "../images/symbols-checkbox.png");
+                        break;
+                    case 1:
+                        $(".eating .choose").eq(1).find("img").attr("src", "../images/symbols-checkbox.png");
+                        break;
+                    case 2:
+                        $(".eating .choose").eq(2).find("img").attr("src", "../images/symbols-checkbox.png");
+                        break;
+                }
+                // 洗澡
+                switch (data.data.bath) {
+                    case 0:
+                        $(".bath .choose").eq(0).find("img").attr("src", "../images/symbols-checkbox.png");
+                        break;
+                    case 1:
+                        $(".bath .choose").eq(1).find("img").attr("src", "../images/symbols-checkbox.png");
+                        break;
+                }
+                // 修饰
+                switch (data.data.retouch) {
+                    case 0:
+                        $(".retouch .choose").eq(0).find("img").attr("src", "../images/symbols-checkbox.png");
+                        break;
+                    case 1:
+                        $(".retouch .choose").eq(1).find("img").attr("src", "../images/symbols-checkbox.png");
+                        break;
+                }
+                // 穿衣
+                switch (data.data.garb) {
+                    case 0:
+                        $(".garb .choose").eq(0).find("img").attr("src", "../images/symbols-checkbox.png");
+                        break;
+                    case 1:
+                        $(".garb .choose").eq(1).find("img").attr("src", "../images/symbols-checkbox.png");
+                        break;
+                    case 2:
+                        $(".garb .choose").eq(1).find("img").attr("src", "../images/symbols-checkbox.png");
+                        break;
+                }
+                // 控制大便
+                switch (data.data.controlStool) {
+                    case 1:
+                        $(".controlStool .choose").eq(0).find("img").attr("src", "../images/symbols-checkbox.png");
+                        break;
+                    case 2:
+                        $(".controlStool .choose").eq(1).find("img").attr("src", "../images/symbols-checkbox.png");
+                        break;
+                    case 3:
+                        $(".controlStool .choose").eq(1).find("img").attr("src", "../images/symbols-checkbox.png");
+                        break;
+                }
+                // 控制小便
+                switch (data.data.controlUrine) {
+                    case 1:
+                        $(".controlUrine .choose").eq(0).find("img").attr("src", "../images/symbols-checkbox.png");
+                        break;
+                    case 2:
+                        $(".controlUrine .choose").eq(1).find("img").attr("src", "../images/symbols-checkbox.png");
+                        break;
+                    case 3:
+                        $(".controlUrine .choose").eq(1).find("img").attr("src", "../images/symbols-checkbox.png");
+                        break;
+                }
+            }
+        })
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,user-scalable=no" />
+    <title>我的优惠券</title>
+    <link rel="stylesheet" href="css/discount-coupon.css">
+    <link rel="stylesheet" href="../lib/icon/iconfont.css">
+    <script src="../js/common.js"></script>
+    <script src="../lib/jquery/jquery-3.1.1.min.js"></script>
+    <script src="js/discount-coupon.js"></script>
+</head>
+<body>
+<div class="container">
+    <!--头部-->
+    <div class="discount-head">
+        <a href="javascript:history.back(-1)"><span class="iconfont icon-iconfontjiantou1"></span></a>
+        <h3>我的优惠券</h3>
+    </div>
+    <!--优惠券-->
+    <div class="discount-box">
+        <!--渲染-->
+    </div>
+    <!--提示-->
+    <div class="discount-info">
+        <p>没有更多优惠券了 | &nbsp;&nbsp;<a href="red-packet-rule.html">优惠券使用规则</a></p>
+    </div>
+    <!--底部-->
+    <div class="foot">
+        <a href="../index.html">
+            <div class="icon icon-one"></div>
+            <p class="text-one">首页</p>
+        </a>
+        <a href="../ehubao/have-bought.html">
+            <div class="icon icon-two"></div>
+            <p>e护社区</p>
+        </a>
+        <a href="../order/order-index.html">
+            <div class="icon icon-three"></div>
+            <p>订单</p>
+        </a>
+        <a href="../personage.html">
+            <div class="icon icon-five"></div>
+            <p style="color: #90BBE1;">我的</p></a>
+    </div>
+</div>
+<script type="text/html" id="tpl">
+    {{each data value i}}
+    <div class="box-item">
+        <div class="item-top">
+            <p>{{data[i].name}}</p>
+            <p class="span">有效期至{{data[i].endTime}}</p>
+        </div>
+        <div class="item-right">
+            <span class="symbol">￥</span><span>{{data[i].discountPrice}}</span>
+            <p>满{{data[i].condition}}可用</p>
+        </div>
+        <div class="item-bottom">
+            {{data[i].remark}}
+        </div>
+    </div>
+    {{/each}}
+</script>
+<script src="../lib/template-web.js"></script>
+</body>
+</html>

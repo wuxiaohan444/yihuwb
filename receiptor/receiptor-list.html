@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,user-scalable=no" />
+    <link rel="stylesheet" href="css/receiptor-list.css">
+    <link rel="stylesheet" href="../lib/icon/iconfont.css">
+    <script src="../lib/jquery/jquery-3.1.1.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="js/receiptor-list.js"></script>
+    <title>受益人列表</title>
+</head>
+<body>
+<div class="container">
+    <!--头部-->
+        <div class="list-head">
+            <div class="photo">
+                <div class="right">✔</div>
+            </div>
+            <h3 class="name"></h3>
+            <p>默认受益人</p>
+        </div>
+    <!--受益人列表-->
+    <div class="list">
+
+    </div>
+    <!--添加受益人-->
+    <div class="add-man">
+        +添加受益人
+    </div>
+    <!--底部-->
+    <div class="foot">
+        <a href="../index.html">
+            <div class="icon icon-one"></div>
+            <p class="text-one">首页</p>
+        </a>
+        <a href="https://shequ.yunzhijia.com/thirdapp/forum/network/5a7c24d9e4b0f860421d9704">
+            <div class="icon icon-two"></div>
+            <p>e护社区</p>
+        </a>
+        <a href="../order/order-index.html">
+            <div class="icon icon-three"></div>
+            <p>订单</p>
+        </a>
+        <a href="../personage.html">
+            <div class="icon icon-five"></div>
+            <p style="color: #90BBE1;">我的</p></a>
+    </div>
+    <!--选择默认受益人-->
+    <div class="modal">
+        <div class="hint">
+            <div class="hint-top">
+                <h5>更换受益人</h5>
+                <img src="../images/close.png" alt="" class="close">
+            </div>
+            <div class="hint-main">
+                请确认<span style="color: #88B2DE;">{{data.name}}</span>为默认受益人
+            </div>
+            <button>确认</button>
+        </div>
+    </div>
+</div>
+<script type="text/html" id="content">
+    <h3>其他受益人</h3>
+    {{each data.infoList as value i}}
+    <div class="list-item">
+        <div class="clearfloat list-item-man" style="width: 80%;float: left">
+            <div class="portrait"><img src="http://47.98.180.47:80/yihu{{data.infoList[i].headImg}}" alt="" style="width: 100%;"></div>
+            <div class="list-info">
+                <p class="name">{{data.infoList[i].name}}</p>
+                <p><span>受益人关系：</span><span>{{data.infoList[i].relationship}}</span></p>
+            </div>
+        </div>
+
+        <span class="iconfont icon-edit edit"></span>
+    </div>
+    {{/each}}
+</script>
+<script src="../lib/template-web.js"></script>
+</body>
+</html>

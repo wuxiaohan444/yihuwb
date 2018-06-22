@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,user-scalable=no"/>
+    <link rel="stylesheet" href="css/gift-packs.css">
+    <link rel="stylesheet" href="../lib/icon/iconfont.css">
+    <script src="../lib/jquery/jquery-3.1.1.min.js"></script>
+    <script src="js/gift-packs.js"></script>
+    <title>领券页面</title>
+</head>
+<body>
+<div class="container">
+    <a href="javascript:history.back(-1)" class="iconfont icon-iconfontjiantou1"></a>
+
+    <!--优惠大礼包狂送中-->
+    <div class="text">
+        优惠券大礼包狂送中
+    </div>
+    <!--礼包图标-->
+    <div class="gift-icon">
+        <img src="../images/libao.png" alt="">
+    </div>
+
+    <!--首次需要登录-->
+    <div class="login">
+        <input type="text" placeholder="手机号码">
+        <br>
+        <input type="text" placeholder="验证码">
+        <button type="button">获取</button>
+    </div>
+
+    <!--点此领取优惠券-->
+    <div class="get">
+        <a href="javascript:;">点此领取优惠券</a>
+    </div>
+
+    <!--优惠券已经领完了-->
+    <div class="red-modal">
+        <!--优惠券已经领完了-->
+        <div class="red-box1">
+            <span class="iconfont icon-guanbi close"></span>
+            <h4>优惠券已经领完了</h4>
+            <div class="box-page">
+                <img src="../images/nored.png" alt="">
+            </div>
+            <h5>可在 我的 - 优惠券 中使用已领取的优惠券</h5>
+        </div>
+        <button class="use1">我的优惠券</button>
+
+        <!--领取红包-->
+        <div class="red-box2">
+            <span class="iconfont icon-guanbi close"></span>
+            <h4>优惠券已领取成功</h4>
+            <div class="box-page">
+                <div class="money">￥<span>{{data.discountPrice}}</span></div>
+                <p>{{data.remark}}</p>
+                <div class="big-circle c-top"></div>
+                <div class="big-circle c-bottom"></div>
+                <div>
+                    <div class="small-circle"></div>
+                    <div class="small-circle"></div>
+                    <div class="small-circle"></div>
+                    <div class="small-circle"></div>
+                    <div class="small-circle"></div>
+                    <div class="small-circle"></div>
+                </div>
+
+            </div>
+            <h5>恭喜您! 获得{{data.name}}</h5>
+            <p>下单后微信支付, 直抵现金</p>
+            <p>可在 我的 - 优惠券 中查看</p>
+        </div>
+        <button class="use2">去使用优惠券</button>
+
+    </div>
+
+    <!--活动规则-->
+    <div class="active-rule">
+        <h3>活动规则：</h3>
+        <p>(可编辑)使用红包需要同时满足以下条件</p>
+        <p>(1)支付价格超过红包价值才可以用支付红包</p>
+        <p>(2)仅限在线支付使用,且受益人手机号、领取红包时输入的手机号和账号中的手机号需为同手机号</p>
+        <p>(3)红包的适用服务及金额限制、地域限制,需要在对应地狱服务产品下且满足限制金额后才可使用</p>
+        <p>(4)每个订单只能使用一张红包,且每天最多使用两次红包
+        </p>
+    </div>
+</div>
+</body>
+</html>

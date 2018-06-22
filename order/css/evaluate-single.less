@@ -1,0 +1,257 @@
+@import "../../css/common";
+html, body {
+  position: relative;
+  height: 100%;
+  background: linear-gradient(to bottom, #88B2DE, #A8D9EA);
+}
+.hidden {
+  height: 100%;
+  overflow: hidden;
+}
+.container {
+  padding-bottom: 50rem/@num;
+}
+
+textarea {
+  outline: none;
+}
+
+//头部
+.single-head {
+  padding-top: 35rem/@num;
+  padding-left: 20rem/@num;
+  box-sizing: border-box;
+  color: white;
+  font-size: 26rem/@num;
+  a {
+    color: white;
+    font-size: 28rem/@num;
+    padding-right: 20rem/@num;
+  }
+}
+
+//主体
+.single-main {
+  margin: 40rem/@num;
+  box-sizing: border-box;
+  border-radius: 15rem/@num;
+  background: white;
+  border-bottom: 20rem/@num;
+  .main-item {
+    padding: 10rem/@num;
+    box-sizing: border-box;
+    .item-top {
+      border-bottom: 1px solid #D8DEE1;
+      padding-top: 20rem/@num;
+      .item-top-left {
+        padding-left: 40rem/@num;
+        width: 50%;
+        float: left;
+        img {
+          float: left;
+          width: 70rem/@num;
+          height: 78rem/@num;
+          margin-right: 30rem/@num;
+        }
+        p {
+          float: left;
+          font-size: 26rem/@num;
+          .iconfont {
+            color: #e8e8e8;
+            font-size: 36rem/@num;
+          }
+        }
+      }
+      .item-top-right {
+        width: 161rem/@num;
+        height: 68rem/@num;
+        float: right;
+        background-image: linear-gradient(-152deg, #92BFE2 0%, #88B2DE 100%);
+        box-shadow: 0 6px 10px 0 rgba(20, 133, 246, 0.19);
+        border-radius: 200rem/@num;
+        padding-top: 14rem/@num;
+        padding-left: 26rem/@num;
+        box-sizing: border-box;
+        line-height: 40rem/@num;
+        img {
+          width: 44rem/@num;
+          height: 40rem/@num;
+          float: left;
+        }
+        span {
+          float: left;
+          font-size: 24rem/@num;
+          color: #FFFFFF;
+        }
+      }
+      .item-top-bottom {
+        float: left;
+        width: 460rem/@num;
+        height: 120rem/@num;
+        margin-left: 130rem/@num;
+        margin-bottom: 50rem/@num;
+        button {
+          width: 138rem/@num;
+          height: 50rem/@num;
+          border-radius: 10rem/@num;
+          border: 1px solid #88b2de;
+          background: white;
+          color: #88b2de;
+          font-size: 24rem/@num;
+        }
+        button.now {
+          background: #88b2de;
+          color: white;
+        }
+      }
+    }
+    .item-bottom {
+      text-align: center;
+      h5 {
+        padding-top: 40rem/@num;
+        font-size: 32rem/@num;
+        font-weight: 500;
+      }
+      p {
+        span {
+          color: #e8e8e8;
+          font-size: 36rem/@num;
+        }
+      }
+      textarea {
+        width: 575rem/@num;
+        height: 205rem/@num;
+        border-radius: 20rem/@num;
+        padding: 20rem/@num;
+        box-sizing: border-box;
+        margin-top: 30rem/@num;
+        color: #b4b4b5;
+        overflow: hidden;
+      }
+      .upload {
+        padding-left: 40rem/@num;
+        padding-bottom: 10rem/@num;
+        span {
+          padding-left: 20rem/@num;
+          float: left;
+          font-size: 26rem/@num;
+          line-height: 110rem/@num;
+        }
+        .preview {
+          width: 360rem/@num;
+          display: none;
+          .preview-img {
+            width: 100%;
+          }
+        }
+        .preview.now {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+//上传照片
+.box {
+  width: 100%;
+  height: 100%;
+  clear: both;
+}
+
+.z_photo {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  clear: both;
+}
+
+
+.z_addImg {
+  float: left;
+  margin-right: 0.2rem;
+  margin-bottom: 20rem/@num;
+}
+.z_addImg>img{
+  width: 110rem/@num;
+  height: 110rem/@num;
+  float: left;
+}
+.z_file {
+  width: 110rem/@num;
+  height: 110rem/@num;
+  background: url(../../images/上传.jpg) no-repeat;
+  background-size: 100% 100%;
+  float: left;
+  margin-right: 0.2rem;
+}
+
+.z_file input::-webkit-file-upload-button {
+  width: 1rem;
+  height: 1rem;
+  border: none;
+  position: absolute;
+  outline: 0;
+  opacity: 0;
+}
+
+.z_file input#file {
+  width: 110rem/@num;
+  height: 110rem/@num;
+  display: block;
+  vertical-align: middle;
+  opacity: 0;
+}
+
+
+//模态框
+.modal{
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0,0,0,.5);
+  font-size: 32rem/@num;
+  text-align: center;
+  display: none;
+  .box{
+    padding: 30rem/@num;
+    box-sizing: border-box;
+    width: 80%;
+    height: 200rem/@num;
+    background: #FFFFFF;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    border-radius: 20rem/@num;
+    p{
+      display: block;
+      border-top: 1px solid #EEF3F8;
+      margin-top: 50rem/@num;
+      color: #8BB7DF;
+      font-size: 36rem/@num;
+      padding-top: 10rem/@num;
+    }
+  }
+}
+
+
+
+//提交
+.present {
+  width: 230rem/@num;
+  height: 72rem/@num;
+  margin: 50rem/@num auto;
+  margin-bottom: 0;
+  border: 1px solid white;
+  text-align: center;
+  color: white;
+  line-height: 72rem/@num;
+  border-radius: 30rem/@num;
+  font-size: 32rem/@num;
+}

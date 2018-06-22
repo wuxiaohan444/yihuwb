@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,user-scalable=no"/>
+    <link rel="stylesheet" href="css/receiptor.css">
+    <link rel="stylesheet" type="text/css" href="../lib/camera.css/aui.css"/>
+    <link rel="stylesheet" href="../lib/camera.css/intial.css"/>
+    <link rel="stylesheet" href="../lib/camera.css/camera.css">
+    <link rel="stylesheet" href="../lib/icon/iconfont.css">
+    <script type="text/javascript" src="../lib/jquery/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="../lib/camera.js/hammer.min.js"></script>
+    <script type="text/javascript" src="../lib/camera.js/lrz.all.bundle.js"></script>
+    <script type="text/javascript" src="../lib/camera.js/iscroll-zoom-min.js"></script>
+    <script type="text/javascript" src="../lib/camera.js/PhotoClip.js"></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+    <script src="js/receiptor.js"></script>
+    <title>添加受益人</title>
+</head>
+<body>
+<div class="container">
+    <!--添加受益人头部-->
+    <div class="add-head">
+        <a href="javascript:history.back(-1)"><img src="../images/tianjiashouyi.png" alt=""></a>
+        <h3>添加受益人</h3>
+        <div class="add">
+            <img src="../images/shouyi.png" alt="" id="photo">
+            <span class="symbol">+</span>
+        </div>
+    </div>
+    <!--上传照片-->
+    <section class="aui-text-center">
+			<span class="btn">
+				点击设置头像
+			</span>
+    </section>
+    <!--图片裁剪-->
+    <div class="clipbg displaynone">
+        <div id="clipArea"></div>
+        <div class="loading displaynone">正在载入图片...</div>
+        <div class="footer">
+            <dl>
+                <dd style="background: #8EB6E0; color: #ffffff;border: none;">打开相册<input type="file" id="file"
+                                                                                         accept="image/*"></dd>
+                <dd id="clipBtn">完成裁剪</dd>
+            </dl>
+            <div class="back">取消</div>
+        </div>
+    </div>
+    <!--基础信息-->
+    <div class="basic-info clearfloat">
+        <input class="name" placeholder="姓名" type="text">
+        <span class="name-info">*</span>
+        <div class="sex"><span class="please">请选择性别</span>
+            <span class="iconfont icon-weibiaoti35"></span>
+            <ul class="option">
+                <li>男</li>
+                <li>女</li>
+            </ul>
+        </div>
+        <input class="id-card" placeholder="身份证" type="text">
+        <span class="id-verify"></span>
+        <input class="phone" placeholder="电话" type="text">
+        <span class="photo-verify"></span>
+        <span class="phone-info">*</span>
+        <div class="relation"><span class="please">受益人关系</span>
+            <span class="iconfont icon-weibiaoti35"></span>
+            <ul class="option">
+                <li>本人</li>
+                <li>父母</li>
+                <li>配偶</li>
+                <li>子女</li>
+                <li>其他</li>
+            </ul>
+        </div>
+        <textarea class="address" placeholder="服务地址"></textarea>
+    </div>
+    <!--修改-->
+    <div class="info-amend">确认</div>
+
+    <!--验证-->
+    <div class="modal">
+        <div class="hint add">
+            <div class="hint-top">
+                <h5>添加受益人信息</h5>
+                <img src="../images/close.png" alt="" class="close">
+            </div>
+            <div class="hint-main">
+                添加成功
+            </div>
+            <button>确认</button>
+        </div>
+        <div class="hint error">
+            <div class="hint-top">
+                <h5>完善受益人</h5>
+                <img src="../images/close.png" alt="" class="close">
+            </div>
+            <div class="hint-main">
+                <span style="color: #88B2DE;"></span>为必填信息，请填写
+            </div>
+            <button>确认</button>
+        </div>
+        <div class="hint info">
+            <div class="hint-top">
+                <h5>完善受益人</h5>
+                <img src="../images/close.png" alt="" class="close">
+            </div>
+            <div class="hint-main">
+                <span style="color: #88B2DE;"></span>有错误
+            </div>
+            <button>确认</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

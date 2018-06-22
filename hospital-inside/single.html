@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,user-scalable=no"/>
+    <link rel="stylesheet" href="css/single.css">
+    <link rel="stylesheet" href="../lib/icon/iconfont.css">
+    <script src="../js/common.js"></script>
+    <script src="../lib/jquery/jquery-3.1.1.min.js"></script>
+    <script src="js/single.js"></script>
+    <title>单页护理</title>
+</head>
+<body>
+<div class="container">
+    <div class="single-head">
+        <a class="left" href="javascript:history.back(-1)"><span class="iconfont icon-iconfontjiantou1"></span></a>
+        <div class="project">
+            <img src="../images/yuannei2.png" alt="">
+        </div>
+        <h3><span></span>单项护理</h3>
+        <p><span>上海市</span> - <span>复旦大学附属儿科医院</span></p>
+    </div>
+    <!--产品-->
+    <div class="single-main">
+        <!--渲染-->
+    </div>
+    <!--立即预定-->
+    <div class="reserve">
+        <div class="price">
+            <span class="price-count">￥</span><span class="new-price"></span>
+            <span class="old-price">1,1600</span>
+        </div>
+        <a class="server" href="javascript: ; ">
+            <span class="iconfont icon-kefuzhongxin"></span>
+            <p>客服</p>
+        </a>
+        <div class="immediately">
+            <a href="javascript:;" style="color: white">立即预定</a>
+        </div>
+    </div>
+    <!--新标杆-->
+    <div class="tagline">
+        <h2>建立护理行业新标杆</h2>
+        <p>We Redefine Patients'</p>
+        <p>本平台由上海益护健康管理有限公司提供技术服务</p>
+    </div>
+    <!--提示模态框-->
+    <div class="modal">
+        <div class="modal-box">
+            <div class="title clearfloat">
+                <h5>骨科基础陪护</h5>
+                <p><span class="iconfont icon-iconfontzhizuobiaozhun44"></span><span>评价</span></p>
+            </div>
+            <div class="introduce"></div>
+        </div>
+        <div class="close"><span class="iconfont icon-guanbi"></span></div>
+    </div>
+</div>
+<script type="text/html" id="single-main">
+    {{each data v i}}
+    <div class="item">
+        <div class="radio"></div>
+        <img src="../images/e护宝.png" alt="" class="product">
+        <div class="name" data-id="{{data[i].id}}">
+            <div class="label"></div>
+            <h3>{{data[i].name}}</h3>
+            <p>￥<span class="real-price">{{data[i].detail.salePrice}}</span><span class="small">/次</span></p>
+        </div>
+        <div class="num">
+            <button class="minus now">-</button>
+            <input class="count" type="text" placeholder="" value="0">
+            <button class="plus">+</button>
+        </div>
+    </div>
+    {{/each}}
+</script>
+<script src="../lib/template-web.js"></script>
+</body>
+</html>

@@ -1,0 +1,296 @@
+@charset "UTF-8";
+@media (min-width: 320px) {
+  html {
+    font-size: 21.33px;
+  }
+}
+@media (min-width: 360px) {
+  html {
+    font-size: 24px;
+  }
+}
+@media (min-width: 375px) {
+  html {
+    font-size: 25px;
+  }
+}
+@media (min-width: 384px) {
+  html {
+    font-size: 25.6px;
+  }
+}
+@media (min-width: 400px) {
+  html {
+    font-size: 26.67px;
+  }
+}
+@media (min-width: 414px) {
+  html {
+    font-size: 27.6px;
+  }
+}
+@media (min-width: 424px) {
+  html {
+    font-size: 28.27px;
+  }
+}
+@media (min-width: 480px) {
+  html {
+    font-size: 32px;
+  }
+}
+@media (min-width: 540px) {
+  html {
+    font-size: 36px;
+  }
+}
+@media (min-width: 581px) {
+  html {
+    font-size: 38.73px;
+  }
+}
+@media (min-width: 620px) {
+  html {
+    font-size: 41.33px;
+  }
+}
+@media (min-width: 660px) {
+  html {
+    font-size: 44px;
+  }
+}
+@media (min-width: 690px) {
+  html {
+    font-size: 46px;
+  }
+}
+@media (min-width: 720px) {
+  html {
+    font-size: 48px;
+  }
+}
+@media (min-width: 750px) {
+  html {
+    font-size: 50px;
+  }
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+li {
+  list-style: none;
+  width: 100%;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 500;
+}
+input,
+button {
+  outline: none;
+}
+textarea {
+  outline: none;
+  resize: none;
+}
+a {
+  text-decoration: none;
+  color: #33383D;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -moz-tap-highlight-color: rgba(0, 0, 0, 0);
+  -ms-tap-highlight-color: rgba(0, 0, 0, 0);
+  -o-tap-highlight-color: rgba(0, 0, 0, 0);
+  tap-highlight-color: rgba(0, 0, 0, 0);
+}
+a:link,
+a:active,
+a:visited,
+a:focus {
+  outline: none;
+}
+a:hover {
+  background: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+}
+html,
+body {
+  color: #4E4E4F;
+  overflow: scroll;
+  background: #FFFFFF;
+}
+.clearfloat:after {
+  display: block;
+  clear: both;
+  content: "";
+  visibility: hidden;
+  height: 0;
+}
+input {
+  -webkit-appearance: none;
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: #B4B4B5;
+}
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #B4B4B5;
+}
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #B4B4B5;
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  color: #B4B4B5;
+}
+.container {
+  margin: 0 auto;
+  max-width: 750px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.foot {
+  width: 100%;
+  height: 2rem;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  background-color: white;
+  box-shadow: 0 -3px 14px 0 rgba(56, 93, 142, 0.12);
+}
+.foot a {
+  flex: 1;
+  text-align: center;
+  font-size: 0.48rem;
+  color: #92A3AD;
+}
+.foot a .icon {
+  width: 0.8rem;
+  height: 0.8rem;
+  margin-left: 50%;
+  margin-top: 0.3rem;
+  transform: translateX(-50%);
+}
+.foot a .icon-one {
+  background: url("../images/bottom.png");
+  background-size: 0.8rem 0.8rem;
+}
+.foot a .icon-two {
+  background: url("../images/bottomcopy1.png");
+  background-size: 0.8rem 0.8rem;
+}
+.foot a .icon-three {
+  background: url("../images/bottomcopy12.png");
+  background-size: 0.8rem 0.8rem;
+}
+.foot a .icon-five {
+  background: url("../images/bottomcopy13.png");
+  background-size: 0.8rem 0.8rem;
+}
+.assess-head {
+  width: 100%;
+  height: 5.1rem;
+  background: linear-gradient(to right, #88B2DE, #A8D9EA);
+  color: white;
+  position: relative;
+  padding-top: 0.4rem;
+  text-align: center;
+  box-sizing: border-box;
+}
+.assess-head a {
+  position: absolute;
+  color: white;
+  top: 0;
+  left: 0.4rem;
+}
+.assess-head h3 {
+  font-size: 0.64rem;
+  font-weight: 500;
+  line-height: 1.2rem;
+}
+.assess-head p {
+  font-size: 0.56rem;
+  line-height: 1.6rem;
+}
+.assess-head p:last-child {
+  font-size: 0.48rem;
+}
+.assess-info .info-item {
+  padding: 0.6rem 0;
+  padding-left: 0.4rem;
+  box-sizing: border-box;
+  border-bottom: 0.4rem solid #EEF3F8;
+}
+.assess-info .info-item .list {
+  font-size: 0.56rem;
+  line-height: 1.4rem;
+  height: 1.4rem;
+}
+.assess-info .info-item .list .radio {
+  float: left;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  margin: 0 0.2rem;
+  margin-top: 0.34rem;
+  margin-left: 0.6rem;
+}
+.assess-info .info-item .list .radio img {
+  width: 100%;
+  vertical-align: top;
+}
+.assess-info .info-item .list span {
+  float: left;
+  color: #4E4E4F;
+}
+.assess-info .info-item .list span:first-child {
+  color: #b4b4b5;
+}
+.assess-info .info-item p {
+  font-size: 0.56rem;
+  line-height: 1.68rem;
+  color: #B4B4B5;
+}
+.assess-info .info-item p span {
+  font-size: 0.56rem;
+  color: #4E4E4F;
+}
+.assess-info .info-item .item-class {
+  width: 100%;
+}
+.assess-info .info-item .item-class p {
+  width: 50%;
+  float: left;
+}
+.assess-info .info-item:last-child {
+  border-bottom: none;
+}
+.tagline {
+  width: 100%;
+  height: 3.9rem;
+  background-color: #EEF3F8;
+  color: #CFD6DB;
+  text-align: center;
+  margin-top: 2.72rem;
+  padding: 0.4rem 0;
+}
+.tagline h2 {
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding-top: 0.6rem;
+}
+.tagline p {
+  font-size: 0.56rem;
+  line-height: 1rem;
+}
+/*# sourceMappingURL=my-assess(inside).css.map */

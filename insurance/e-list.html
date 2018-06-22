@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,user-scalable=no"/>
+    <link rel="stylesheet" href="css/e-list.css">
+    <script src="../lib/jquery/jquery-3.1.1.min.js"></script>
+    <title>受益人列表</title>
+</head>
+<body>
+<div class="container">
+    <div class="safeguard-main">
+        {{each data.infoList as value i}}
+        {{if(each data.infoList[i].relationshipList[0].length!==0)}}
+        {{each data.infoList[i].relationshipList as value j}}
+        <div class="safeguard-item">
+            <h5>{{each data.infoList[i].relationship}}的保障</h5>
+            <div class="title"><span>(E护宝){{each data.infoList[i].relationshipList[j].productName}}</span>
+                <button>保障中</button>
+            </div>
+            <p>被投保人：<span>{{each data.infoList[i].relationshipList[j].relationshipName}}</span></p>
+            <p>保障额度：<span>{{each data.infoList[i].relationshipList[j].price}}元</span></p>
+            <p>{{each data.infoList[i].relationshipList[j].insureBeginDate}}至{{each data.infoList[i].relationshipList[j].insureEndDate}}</p>
+            <div class="add">添加保障</div>
+        </div>
+        {{/each}}
+        {{else}}
+
+        {{/if}}
+        {{/each}}
+        <!--<div class="safeguard-item">
+            <h5>配偶的保障</h5>
+            <p class="now">暂无保单</p>
+            <div class="add">为TA投保</div>
+        </div>-->
+    </div>
+
+    <!--底部-->
+    <div class="foot">
+        <a href="../index.html">
+            <div class="icon icon-one"></div>
+            <p class="text-one">首页</p>
+        </a>
+        <a href="../ehubao/have-bought.html">
+            <div class="icon icon-two"></div>
+            <p style="color:#88B2DE">e护社区</p>
+        </a>
+        <a href="../order/order-index.html">
+            <div class="icon icon-three"></div>
+            <p>订单</p>
+        </a>
+        <a href="../personage.html">
+            <div class="icon icon-five"></div>
+            <p>我的</p></a>
+    </div>
+</div>
+<script>
+    $(function () {
+        $(".add").on("click", function () {
+            window.location.href="unpurchased-insurance.html"
+        })
+    })
+</script>
+</body>
+</html>

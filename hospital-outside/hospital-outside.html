@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,user-scalable=no" />
+    <link rel="stylesheet" href="css/hospital-outside.css">
+    <script src="../js/common.js"></script>
+    <script src="../lib/jquery/jquery-3.1.1.min.js"></script>
+    <script src="js/hospital-outside.js"></script>
+    <title>院外护理</title>
+</head>
+<body>
+<div class="container">
+    <!--头部-->
+    <div class="outside-head">
+        <img src="../images/yuanwaitubiao.png" alt="">
+        <h3>院外护理</h3>
+        <p><span class="city-address">上海</span>市 - <a href="city-outside.html">请选择您所在区域地</a></p>
+    </div>
+    <!--分类-->
+    <div class="outside-class">
+       <!--渲染-->
+    </div>
+    <!--底部-->
+    <div class="foot">
+        <a href="../index.html">
+            <div class="icon icon-one"></div>
+            <p class="text-one" style="color: #88B2DE;">首页</p>
+        </a>
+        <a href="https://shequ.yunzhijia.com/thirdapp/forum/network/5a7c24d9e4b0f860421d9704">
+            <div class="icon icon-two"></div>
+            <p>e护社区</p>
+        </a>
+        <a href="../order/order-index.html">
+            <div class="icon icon-three"></div>
+            <p>订单</p>
+        </a>
+        <a href="../personage.html">
+            <div class="icon icon-five"></div>
+            <p>我的</p></a>
+    </div>
+</div>
+<script type="text/html" id="class">
+    {{each data.list v i}}
+    <a class="class-item" href="all-day.html?id={{data.list[i].id}}">
+        <img src="../images/Group2.png" alt="">
+        <div class="item-right">
+            <p>{{data.list[i].name}}</p>
+          <% data.list[i].introduce %>
+        </div>
+    </a>
+    {{/each}}
+</script>
+<script src="../lib/template-web.js"></script>
+</body>
+</html>

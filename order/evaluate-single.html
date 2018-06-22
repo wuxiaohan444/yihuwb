@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,user-scalable=no" />
+    <link rel="stylesheet" href="css/evaluate-single.css">
+    <link rel="stylesheet" href="../lib/icon/iconfont.css">
+    <script src="../lib/jquery/jquery-3.1.1.min.js"></script>
+    <script src="js/order.js"></script>
+    <title>评价护工</title>
+</head>
+<body>
+<div class="container">
+    <div class="single-head"><a href="javascript:history.back(-1)" class="iconfont icon-iconfontjiantou1"></a>
+        <span>订单编号：</span><span>{{data.orderNo}}</span>
+    </div>
+    <!--主体-->
+    <div class="single-main">
+        <div class="main-item">
+            {{each data.nurseList as value i}}
+            <div class="item-top clearfloat">
+                <div class="item-top-left stars">
+                    <img src="../images/Shape.png" alt="">
+                    <p><span>护工：</span><span>{{data.nurseList[i].realName}}</span></p>
+                    <p class="starts">
+                        <span class="iconfont icon-xingxing"></span>
+                        <span class="iconfont icon-xingxing"></span>
+                        <span class="iconfont icon-xingxing"></span>
+                        <span class="iconfont icon-xingxing"></span>
+                        <span class="iconfont icon-xingxing"></span>
+                    </p>
+                </div>
+                <div class="item-top-right">
+                    <img src="../images/money.png">
+                    <span>打赏</span>
+                </div>
+                <div class="item-top-bottom">
+                    <button>准时到达</button>
+                    <button>仪容整洁</button>
+                    <button>装备完善</button>
+                    <button>态度好</button>
+                    <button>服务专业</button>
+                    <button>废物清理</button>
+                </div>
+            </div>
+            {{/each}}
+            <div class="item-bottom stars">
+                <h5>服务内容评价</h5>
+                <p>
+                    <span class="iconfont icon-xingxing"></span>
+                    <span class="iconfont icon-xingxing"></span>
+                    <span class="iconfont icon-xingxing"></span>
+                    <span class="iconfont icon-xingxing"></span>
+                    <span class="iconfont icon-xingxing"></span>
+                </p>
+                <textarea name="" id=""placeholder="详细评价"></textarea>
+                <div class="upload">
+                    <div class="box">
+                        <!--    照片添加    -->
+                        <div class="z_photo">
+                            <div class="z_file">
+                                <input type="file" name="file" id="file" value="" accept="image/*" multiple
+                                       onchange="imgChange('z_photo');"/>
+
+                            </div>
+                            <span class="up-text">上传图片</span>
+                        </div>
+                    </div>
+                    <!--预览照片-->
+                    <div class="preview">
+                        <img src="" alt="" class="preview-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--提交-->
+    <div class="present">
+        提交
+    </div>
+
+    <!--提示模态框-->
+    <div class="modal">
+        <div class="box"><h5>最多只能上传6张照片</h5>
+            <p>确定</p>
+        </div>
+    </div>
+</div>
+<script>
+    let photoNumber = 0;
+
+    function imgChange(obj1) {
+        let upText = document.querySelector(".up-text");
+        //获取点击的文本框
+        let file = document.getElementById("file");
+        //存放图片的父级元素
+        let imgContainer = document.getElementsByClassName(obj1)[0];
+        //获取的图片文件
+        let fileList = file.files;
+        let imgArr = [];
+        //遍历获取到得图片文件
+        for (let i = 0; i < fileList.length; i++) {
+
+            let reader = new FileReader();
+            let imgUrl;
+            reader.readAsDataURL(fileList[i]);
+            reader.onloadend = function (e) {
+                imgUrl = e.target.result;
+                imgArr.push(imgUrl);
+                photoNumber++;
+                if (photoNumber <= 6) {
+                    let img = document.createElement("img");
+                    img.setAttribute("src", imgArr[i]);
+                    let imgAdd = document.createElement("div");
+                    imgAdd.setAttribute("class", "z_addImg");
+                    imgAdd.appendChild(img);
+                    imgContainer.appendChild(imgAdd);
+                    upText.style.display = 'none';
+                    for (let i = 0; i < $(".z_photo .z_addImg").length; i++) {
+                        $(".z_photo .z_addImg").eq(i).on("click", function () {
+                            $(".preview").addClass("now");
+                            $(".preview img").attr('src', $(this).find(img).attr('src'));
+                        })
+                    }
+                } else {
+                    $(".modal").show();
+                    $("body").addClass("hidden");
+                    $("html").addClass("hidden");
+                }
+
+            };
+
+        }
+
+    }
+
+    $(".preview").on("click", function () {
+        $(this).removeClass("now")
+    });
+
+
+    // // 打赏
+    // $(".item-top-right").on("click", function () {
+    //     alert("打赏成功")
+    // });
+
+    // 选择标签
+    for (let i = 0; i < $(".item-top-bottom button").length; i++) {
+        $(".item-top-bottom button").eq(i).on("click", function () {
+            $(this).toggleClass("now");
+        })
+    }
+
+    // 关闭模态框
+    $(".modal p").on("click",function () {
+        $(".modal").hide()
+        $("body").removeClass("hidden");
+        $("html").removeClass("hidden");
+    })
+
+</script>
+</body>
+</html>

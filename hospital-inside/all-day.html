@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,user-scalable=no" />
+    <link rel="stylesheet" href="css/all-day.css">
+    <link rel="stylesheet" href="../lib/swiper/swiper.min.css">
+    <link rel="stylesheet" href="../lib/icon/iconfont.css">
+    <script src="../lib/jquery/jquery-3.1.1.min.js"></script>
+    <script src="../lib/swiper/swiper.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="js/all-day.js"></script>
+    <title>全天陪护</title>
+</head>
+<body>
+<div class="container">
+    <!--头部-->
+    <div class="all-head banner-container swiper-container">
+        <ul class="swiper-wrapper">
+            <li class="banner-slide swiper-slide"><a href="#"><img src="../images/all1.png" alt=""></a></li>
+            <li class="banner-slide swiper-slide"><a href="#"><img src="../images/all1.png" alt=""></a></li>
+            <li class="banner-slide swiper-slide"><a href="#"><img src="../images/all1.png" alt=""></a></li>
+        </ul>
+        <div class="swiper-pagination"></div>
+        <a href="javascript:history.back(-1);" class="history"><span class="iconfont icon-iconfontjiantou1"></span></a>
+    </div>
+    <!--优享护工-->
+    <div class="clauses clearfloat">
+            <!--渲染-->
+    </div>
+    <!--历史评价-->
+    <div class="count-evaluate">
+       <!--渲染-->
+    </div>
+    <!--评价-->
+    <div class="evaluate">
+        <!--渲染-->
+    </div>
+    <!--tab栏-->
+    <div class="all-tab">
+        <div class="active">产品介绍</div>
+        <div><a href="javascript:;" style="color:#7D919D">服务详情</a></div>
+        <div><a href="javascript:;" style="color:#7D919D">费用说明</a></div>
+        <div><a href="javascript:;" style="color:#7D919D">预定须知</a></div>
+    </div>
+    <!--主要部分-->
+    <div class="all-main">
+
+    </div>
+    <!--服务详情-->
+    <div class="server-details item">
+
+    </div>
+    <!--费用说明与预定须知-->
+    <div class="cost">
+        <h3>费用说明:</h3>
+
+    </div>
+
+    <div class="cost">
+        <h3>预定须知:</h3>
+    </div>
+    <!--新标杆-->
+    <div class="tagline">
+        <h2>建立护理行业新标杆</h2>
+        <p>We Redefine Patients'</p>
+        <p>本平台由上海益护健康管理有限公司提供技术服务</p>
+    </div>
+    <!--立即预定-->
+    <div class="reserve">
+        <a class="server" href="javascript:; ">
+            <span class="iconfont icon-kefuzhongxin"></span>
+            <p>客服</p>
+        </a>
+        <div class="price">
+            <span class="iconfont icon-iconfontzhizuobiaozhun44"></span>
+            <p>评价</p>
+        </div>
+        <div class="immediately">
+            <a href="javascript:;" style="color:#FFFFFF;">立即购买</a>
+        </div>
+    </div>
+</div>
+<script type="text/html" id="clauses">
+      <h3>{{data.name}}</h3>
+        <div class="clauses-left">￥<span>{{data.detail.pricing}}</span><span class="day"> / 天</span></div>
+        <div class="clauses-right">{{data.area}}</div>
+</script>
+<script type="text/html" id="evaluate">
+    <div class="evaluate-item">
+        <div class="item-title">
+            <p class="title-left"><span>用户名：</span><span>{{data.lastOrder.customer.name}}</span></p>
+            <p class="title-right">{{data.lastOrder.createTime}}</p>
+        </div>
+        <p>{{data.lastOrder.judgeInfo}}</p>
+    </div>
+</script>
+<script type="text/html" id="history">
+    <div class="count clearfloat">
+        <p class="grade"><span class="history-count">历史评价&nbsp;&nbsp;</span><span>{{data.lastOrder.judgeLevel/2}}.0</span> 分</p>
+        <div class="count-right">
+            共<span>{{data.totalAssessNum}}</span>条<span class="iconfont icon-you"
+                                     style="color: #b4b4b5"></span>
+        </div>
+        <div class="grade-bottom">
+            <p class="hg-server star">护工服务:
+                <% for(let i=0;i<data.nurseStarLevel/2;i++){ %>
+                <span class="iconfont icon-xingxing"></span>
+                <% }; %>
+            </p>
+            <p class="server-content star">服务内容:
+                <% for(let i=0;i<data.serviceStarLevel/2;i++){ %>
+                <span class="iconfont icon-xingxing"></span>
+                <% }; %>
+            </p>
+        </div>
+    </div>
+</script>
+<!--半自理-->
+<script type="text/html" id="half">
+    {{each data.details[1].services v i}}
+    <div class="work">
+        <span class="time">{{data.details[1].services[i].startTime}}</span>
+        <span class="content">{{data.details[1].services[i].name}}</span>
+    </div>
+    {{/each}}
+</script>
+<script src="../lib/template-web.js"></script>
+</body>
+</html>

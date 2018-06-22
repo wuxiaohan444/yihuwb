@@ -1,0 +1,276 @@
+@import "../../css/common";
+
+html, body {
+  background: url("../../images/bg.png");
+  background-size: 100%;
+  height: 100%;
+  position: relative;
+}
+.hidden {
+  overflow: hidden;
+}
+.container {
+  padding: 20rem/@num;
+  box-sizing: border-box;
+
+  .text{
+    width: 612rem/@num;
+    height: 212rem/@num;
+    margin: 40rem/@num auto;
+    font-size: 96rem/@num;
+    color: white;
+    text-align: center;
+  }
+  .gift-icon{
+    position: absolute;
+    top: 400rem/@num;
+    left:50%;
+    transform: translateX(-50%);
+    img{
+      width:486rem/@num;
+    }
+  }
+  .iconfont {
+    color: white;
+    font-size: 36rem/@num;
+  }
+  .get {
+    font-size: 24rem/@num;
+    text-decoration: underline;
+    text-align: center;
+    margin: 20rem/@num auto;
+    a {
+      color: white;
+    }
+  }
+  //首次登录需要验证
+  .login {
+    width: 610rem/@num;
+    height: 300rem/@num;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20rem/@num;
+    margin: 20rem/@num auto;
+    margin-top: 220rem/@num;
+    padding: 50rem/@num 40rem/@num;
+    box-sizing: border-box;
+    position: relative;
+    input {
+      width: 100%;
+      height: 80rem/@num;
+      margin-bottom: 30rem/@num;
+      border-radius: 40rem/@num;
+      border: 1px solid #5E7785;
+      padding-left: 30rem/@num;
+      box-sizing: border-box;
+      font-size: 28rem/@num;
+      background: transparent;
+      color: #b4b4b5;
+    }
+    button {
+      color: white;
+      border-radius: 39rem/@num;
+      width: 198rem/@num;
+      height: 70rem/@num;
+      background: rgba(0, 0, 0, .3);
+      border: none;
+      position: absolute;
+      right: 45rem/@num;
+      bottom: 60rem/@num;
+      font-size: 28rem/@num;
+    }
+  }
+  //优惠券已经领完了
+  .red-modal {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .7);
+    position: absolute;
+    left: 0;
+    top: 0;
+    text-align: center;
+    display: none;
+    .red-box1 {
+      width: 600rem/@num;
+      height: 666rem/@num;
+      background: #cc484a;
+      margin: 100rem/@num auto;
+      border-radius: 20rem/@num 0 20rem/@num 20rem/@num;
+      color: white;
+      text-align: center;
+      position: relative;
+      box-sizing: border-box;
+      margin-bottom: 70rem/@num;
+      .close {
+        position: absolute;
+        font-size: 76rem/@num;
+        right: -40rem/@num;
+        top: -40rem/@num;
+      }
+      h4 {
+        font-weight: 500;
+        font-size: 36rem/@num;
+        line-height: 100rem/@num;
+      }
+      .box-page {
+        width: 490rem/@num;
+        height: 280rem/@num;
+        margin: 40rem/@num auto;
+        border-radius: 15rem/@num;
+        position: relative;
+        img {
+          width: 400rem/@num;
+        }
+      }
+      h5 {
+        font-size: 24rem/@num;
+        font-weight: 500;
+        letter-spacing: 2rem/@num;
+      }
+    }
+
+    .use1 {
+      width: 450rem/@num;
+      height: 74rem/@num;
+      color: white;
+      font-size: 36rem/@num;
+      border-radius: 30rem/@num;
+      background: transparent;
+      border: 1px solid white;
+    }
+    .red-box2 {
+      width: 600rem/@num;
+      height: 666rem/@num;
+      background: #cc484a;
+      margin: 100rem/@num auto;
+      border-radius: 20rem/@num 0 20rem/@num 20rem/@num;
+      color: white;
+      text-align: center;
+      position: relative;
+      box-sizing: border-box;
+      margin-bottom: 70rem/@num;
+      .close {
+        position: absolute;
+        font-size: 76rem/@num;
+        right: -40rem/@num;
+        top: -40rem/@num;
+      }
+      h4 {
+        font-weight: 500;
+        font-size: 36rem/@num;
+        line-height: 100rem/@num;
+      }
+      .box-page {
+        width: 490rem/@num;
+        height: 280rem/@num;
+        background: #fff8e8;
+        margin: 40rem/@num auto;
+        border-radius: 15rem/@num;
+        position: relative;
+        .money {
+          position: absolute;
+          top: 58rem/@num;
+          left: 50rem/@num;
+          font-size: 90rem/@num;
+          width: 350rem/@num;
+          height: 163rem/@num;
+          border-right: 1px dashed #dbaa67;
+          color: #dbaa67;
+          line-height: 163rem/@num;
+          text-align: left;
+          span {
+            font-size: 130rem/@num;
+          }
+        }
+        p {
+          position: absolute;
+          bottom: 15rem/@num;
+          left: 70rem/@num;
+          font-size: 24rem/@num;
+          color: #a3a29f;
+        }
+        .big-circle {
+          width: 40rem/@num;
+          height: 40rem/@num;
+          border-radius: 50%;
+          background: #cc484a;
+          position: absolute;
+          right: 70rem/@num;
+        }
+        .c-top {
+          top: -20rem/@num;
+        }
+        .c-bottom {
+          bottom: -20rem/@num;
+        }
+        .small-circle {
+          width: 25rem/@num;
+          height: 25rem/@num;
+          border-radius: 50%;
+          background: #cc484a;
+          position: absolute;
+          right: -12.5rem/@num;
+        }
+        .small-circle:first-child {
+          top: 30rem/@num;
+        }
+        .small-circle:nth-child(2) {
+          top: 69rem/@num;
+        }
+        .small-circle:nth-child(3) {
+          top: 108rem/@num;
+        }
+        .small-circle:nth-child(4) {
+          top: 147rem/@num;
+        }
+        .small-circle:nth-child(5) {
+          top: 186rem/@num;
+        }
+        .small-circle:last-child {
+          bottom: 30rem/@num;
+        }
+
+      }
+      h5 {
+        font-size: 32rem/@num;
+        font-weight: 500;
+        letter-spacing: 2rem/@num;
+      }
+      P {
+        font-size: 26rem/@num;
+        line-height: 70rem/@num;
+      }
+    }
+
+    .use2 {
+      width: 450rem/@num;
+      height: 74rem/@num;
+      color: white;
+      font-size: 36rem/@num;
+      border-radius: 30rem/@num;
+      background: transparent;
+      border: 1px solid white;
+    }
+  }
+
+  //活动规则
+  .active-rule {
+    width: 612rem/@num;
+    height: 524rem/@num;
+    background: white;
+    border-radius: 20rem/@num;
+    margin: 20rem/@num auto;
+    padding: 40rem/@num;
+    box-sizing: border-box;
+    h3 {
+      font-size: 32rem/@num;
+      font-weight: 500;
+      padding-bottom: 20rem/@num;
+    }
+    p {
+      font-size: 24rem/@num;
+      color: #929292;
+      line-height: 40rem/@num;
+      padding-left: 20rem/@num;
+    }
+  }
+}

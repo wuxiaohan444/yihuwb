@@ -1,0 +1,290 @@
+@import "../../css/common";
+
+.single-head {
+  width: 100%;
+  height: 270rem/@num;
+  box-sizing: border-box;
+  background: linear-gradient(to right, #88B2DE, #A8D9EA);
+  padding-left: 30rem/@num;
+  padding-top: 20rem/@num;
+  text-align: center;
+  color: white;
+  .left {
+    display: block;
+    width: 72rem/@num;
+    height: 72rem/@num;
+    background: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 72rem/@num;
+    span {
+      font-size: 45rem/@num;
+      color: #B4B4B5;
+    }
+  }
+  .project {
+    width: 105rem/@num;
+    height: 105rem/@num;
+    background: white;
+    border-radius: 50%;
+    margin-left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    img {
+      height: 60rem/@num;
+      width: 60rem/@num;
+      margin-left: 50%;
+      margin-top: 50%;
+      transform: translateX(-50%) translateY(-50%);
+    }
+  }
+  h3 {
+    margin-top: -5%;
+    font-size: 36rem/@num;
+    font-weight: 500;
+  }
+  p {
+    line-height: 50rem/@num;
+    font-size: 24rem/@num;
+  }
+}
+
+//单项主体
+.single-main {
+  width: 100%;
+  .item {
+    padding: 30rem/@num;
+    padding-top: 35rem/@num;
+    width: 100%;
+    height: 201rem/@num;
+    border-bottom: 1px solid #EBF1F7;
+    box-sizing: border-box;
+    .radio {
+      float: left;
+      width: 40rem/@num;
+      height: 40rem/@num;
+      border-radius: 50%;
+      margin-top: 28rem/@num;
+      margin-right: 15rem/@num;
+      background: url("../../images/symbols-checkbox-null.png");
+      background-size: 40rem/@num 40rem/@num;
+      vertical-align: top;
+    }
+    .selected {
+      background: url("../../images/symbols-checkbox.png");
+      background-size: 40rem/@num 40rem/@num;
+    }
+    img {
+      width: 122rem/@num;
+      height: 122rem/@num;
+      border: 1px solid #EBF1F7;
+      border-radius: 10rem/@num;
+      float: left;
+      vertical-align: middle;
+      margin: 0 20rem/@num;
+    }
+    .name {
+      width: 235rem/@num;
+      height: 122rem/@num;
+      float: left;
+      padding: 10rem/@num;
+      box-sizing: border-box;
+      .label {
+        width: 38rem/@num;
+        height: 26rem/@num;
+        float: left;
+        font-size: 18rem/@num;
+        color: white;
+        border-radius: 5rem/@num;
+        text-align: center;
+        line-height: 28rem/@num;
+        margin-top: 5rem/@num;
+        margin-right: 5rem/@num;
+      }
+      .hot{
+        background: #CB86FE;
+      }
+      .rec{
+        background: #2EC6BA;
+      }
+      h3 {
+        font-size: 28rem/@num;
+        font-weight: 500;
+      }
+      p {
+        float: left;
+        font-size: 36rem/@num;
+        color: #FF854F;
+        .small {
+          font-size: 20rem/@num;
+        }
+      }
+    }
+    .num {
+      width: 210rem/@num;
+      height: 122rem/@num;
+      float: right;
+      padding-top: 15rem/@num;
+      box-sizing: border-box;
+      button {
+        font-size: 32rem/@num;
+        width: 48rem/@num;
+        height: 66rem/@num;
+        background: white;
+        border: 1px solid #ebebeb;
+        border-radius: 15rem/@num;
+        color: #4E4E4F;
+      }
+      input{
+        font-size: 32rem/@num;
+        height: 66rem/@num;
+        background: white;
+        border: 1px solid #ebebeb;
+        border-radius: 15rem/@num;
+        color: #4E4E4F;
+        text-align: center;
+      }
+      .now {
+        background: #F2F2F2;
+        color: #D2D2D2;
+      }
+      .count {
+        width: 72rem/@num;
+      }
+    }
+  }
+}
+
+//立即预定
+.reserve {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 100rem/@num;
+  box-shadow: 0 -3px 14px 0 rgba(56, 93, 142, 0.12);
+  .price {
+    width: 35%;
+    height: 100%;
+    border-right: 1px solid #EEF3F8;
+    padding-top: 10rem/@num;
+    padding-left: 10rem/@num;
+    box-sizing: border-box;
+    float: left;
+    background: #FFFFFF;
+    .price-count {
+      font-size: 36rem/@num;
+      text-decoration: none;
+    }
+    span {
+      color: #FF854F;
+      font-size: 36rem/@num;
+    }
+    .old-price {
+      font-size: 24rem/@num;
+      text-decoration: line-through;
+      color: #E8E8E8;
+    }
+  }
+
+  .server {
+    float: left;
+    text-align: center;
+    background: #FFFFFF;
+    position: relative;
+    width: 15%;
+    color: #7D919D;
+    height: 100%;
+    span {
+      font-size: 36rem/@num;
+    }
+    p {
+      position: absolute;
+      top: 53rem/@num;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 20rem/@num;
+    }
+  }
+
+  .immediately {
+    float: left;
+    height: 100%;
+    width: 50%;
+    background: linear-gradient(to right, #26C3BA, #82ECBB);
+    text-align: center;
+    color: white;
+    line-height: 100rem/@num;
+  }
+}
+
+//宣传语
+.tagline {
+  width: 100%;
+  height: 195rem/@num;
+  background-color: #EEF3F8;
+  color: #CFD6DB;
+  text-align: center;
+  margin-bottom: 100rem/@num;
+  h2 {
+    font-size: 36rem/@num;
+    font-weight: 500;
+    padding-top: 30rem/@num;
+  }
+  p {
+    font-size: 28rem/@num;
+    line-height: 50rem/@num;
+  }
+}
+
+//提示模态框
+.modal {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .3);
+  display: none;
+  .modal-box {
+    width: 710rem/@num;
+    height: 735rem/@num;
+    background: white;
+    margin: 100rem/@num auto;
+    border-radius: 15rem/@num;
+    padding: 20rem/@num;
+    box-sizing: border-box;
+    .title {
+      border-bottom: 1px solid #D8DEE1;
+      height: 70rem/@num;
+      line-height: 70rem/@num;
+      h5 {
+        font-size: 32rem/@num;
+        font-weight: 500;
+        float: left;
+      }
+      P {
+        float: right;
+        color: #7D919D;
+        font-size: 20rem/@num;
+        .iconfont {
+          font-size: 50rem/@num;
+        }
+        span {
+          vertical-align: middle;
+        }
+      }
+    }
+    p {
+      font-size: 26rem/@num;
+      line-height: 50rem/@num;
+    }
+  }
+  .close {
+    width: 20%;
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+    span {
+      font-size: 70rem/@num;
+    }
+  }
+}

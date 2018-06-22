@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,user-scalable=no"/>
+    <link rel="stylesheet" href="css/safeguard.css">
+    <script src="../lib/jquery/jquery-3.1.1.min.js"></script>
+    <script src="../js/common.js"></script>
+    <title>我的保障</title>
+</head>
+<body>
+<div class="container">
+    <div class="safeguard-main">
+        <!--渲染数据-->
+    </div>
+
+    <!--底部-->
+    <div class="foot">
+        <a href="../index.html">
+            <div class="icon icon-one"></div>
+            <p class="text-one">首页</p>
+        </a>
+        <a href="../ehubao/have-bought.html">
+            <div class="icon icon-two"></div>
+            <p style="color:#88B2DE">e护社区</p>
+        </a>
+        <a href="../order/order-index.html">
+            <div class="icon icon-three"></div>
+            <p>订单</p>
+        </a>
+        <a href="../personage.html">
+            <div class="icon icon-five"></div>
+            <p>我的</p></a>
+    </div>
+</div>
+<script type="text/html" id="tpl">
+
+
+    {{each data.infoList v i}}
+    {{each data.infoList[i].relationshipList v j}}
+    <div class="safeguard-item">
+        <h5>{{data.infoList[i].relationship}}的保障</h5>
+        <div class="title"><span>{{data.infoList[i].relationshipList[j].productName}}</span>
+            {{if data.infoList[i].relationshipList.length===1}}
+            <button style="display: none">保障中</button>
+            {{else}}
+            <button>保障中</button>
+            {{/if}}
+        </div>
+        {{if data.infoList[i].relationshipList.length===1}}
+        <p style="text-align: center;font-size: 24px">暂无投保</p>
+        <div class="add">为TA投保</div>
+        {{else}}
+        <p>被投保人：<span>{{data.infoList[i].relationshipList[j].relationshipName}}</span></p>
+        <p>保障额度：<span>{{data.infoList[i].relationshipList[j].price}}元</span></p>
+        <p>
+            {{data.infoList[i].relationshipList[j].insureBeginDate}}至{{data.infoList[i].relationshipList[j].insureEndDate}}</p>
+        <div class="add">添加保障</div>
+        {{/if}}
+    </div>
+    {{/each}}
+    {{/each}}
+
+</script>
+<script src="../lib/template-web.js"></script>
+<script>
+    $(function () {
+        // 拿到数据
+        $.ajax({
+            url: ip + "/patient/insure/getBuyInsureList?loginUserCode="+getLoginUserCode(),
+            type: "GET",
+            data: {
+                customerId: 1
+            },
+            success: function (data) {
+                console.log(data.data.infoList.length);
+                for (let i = 0; i < data.data.infoList.length; i++) {
+                    data.data.infoList[i].relationshipList.push(data.data.infoList[i].relationship)
+                }
+
+                console.log(data);
+                $(".safeguard-main").html(template("tpl", data));
+                // for (let i = 0; i < data.data.infoList.length; i++) {
+                //     if (data.data.infoList[i].relationshipList.length === 1) {
+                //
+                //     }
+                // }
+                $(".add").on("click", function () {
+                    window.location.href = "unpurchased-insurance.html"
+                });
+
+            }
+        })
+    })
+</script>
+</body>
+</html>

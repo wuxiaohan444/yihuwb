@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,user-scalable=no"/>
+    <link rel="stylesheet" href="css/give-reward.css">
+    <link rel="stylesheet" href="../lib/icon/iconfont.css">
+    <script src="../js/common.js"></script>
+    <script src="../lib/jquery/jquery-3.1.1.min.js"></script>
+    <script src="js/give-reward.js"></script>
+    <title>打赏</title>
+</head>
+<body>
+<div class="container">
+    <div class="reward-head">
+        <!--渲染-->
+    </div>
+    <!--记录-->
+    <div class="reward-record">
+        <!--渲染-->
+    </div>
+    <!--底部-->
+    <div class="foot">
+        <a href="../index.html">
+            <div class="icon icon-one"></div>
+            <p class="text-one">首页</p>
+        </a>
+        <a href="#">
+            <div class="icon icon-two"></div>
+            <p>e护社区</p>
+        </a>
+        <a href="#">
+            <div class="icon icon-three"></div>
+            <p>订单</p>
+        </a>
+        <a href="../personage.html">
+            <div class="icon icon-five"></div>
+            <p class="text-five" style="color: #88B2DE">我的</p></a>
+    </div>
+</div>
+<script type="text/html" id="info">
+    <a class="reward-arrow" href="javascript:history.back(-1)"> <span class="iconfont icon-iconfontjiantou1"></span></a>
+    <img src="../images/{{data.customer.headImg}}" alt="">
+    <p>{{data.customer.customerName}}有<span>{{data.count}}</span>次打赏</p>
+</script>
+<script type="text/html" id="tpl">
+    {{each data.infoList as value i}}
+    <div class="reward-record-item">
+        <div class="item-left">感谢您为护工<span style="color:#33383D;">{{data.infoList[i].nurseName}}</span>打赏</div>
+        <div class="item-right">{{data.infoList[i].rewardCost}}元</div>
+    </div>
+    {{/each}}
+</script>
+<script src="../lib/template-web.js"></script>
+</body>
+</html>

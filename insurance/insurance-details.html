@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,user-scalable=no"/>
+    <link rel="stylesheet" href="css/insurance-detail.css">
+    <link rel="stylesheet" href="../lib/icon/iconfont.css">
+    <script src="../js/common.js"></script>
+    <link rel="stylesheet" href="../css/calendar.css">
+    <script src="../lib/jquery/jquery-3.1.1.min.js"></script>
+    <script src="../js/calendar.js"></script>
+    <script src="js/insurance-details.js"></script>
+    <title>保险详情</title>
+</head>
+<body>
+<div class="container">
+    <!--头部-->
+    <div class="derails-head">
+        <!--渲染-->
+    </div>
+    <!--我的权益-->
+    <div class="my-equity">
+        <div class="equity-title">
+            <!--<img src="../images/TextAlignLeftIcon.png" alt="">-->
+            <img src="../images/{{data.picPath}}" alt="">
+            <span>我的权益</span>
+            <span class="right">保障详细</span>
+        </div>
+    </div>
+    <!--详细-->
+    <div class="content">
+    </div>
+    <!--信息-->
+    <div class="insurance-main">
+        <div class="insurance-info-item">
+            <span class="name">保障期限</span>
+            <div class="item-right three">
+                <span class="year deadline" style="color: #4E4E4F;"></span>
+                <span class="iconfont icon-weibiaoti35"></span>
+            </div>
+        </div>
+        <div class="insurance-info-item">
+            <span class="name ">生效日期</span>
+            <div class="item-right start" style="float: right;">
+                <span class="year">2017-08-27</span>
+            </div>
+        </div>
+        <div class="insurance-info-item">
+            <span class="name">保障期限</span>
+            <div class="item-right">
+                <span class="year end">2017-08-27</span>
+            </div>
+        </div>
+        <div class="insurance-info-item">
+            <span class="name">缴纳金额</span>
+            <div class="item-right">
+                <span class="year price-one">9000元</span>
+            </div>
+        </div>
+        <div class="insurance-info-item">
+            <span class="name">缴费频率</span>
+            <div class="item-right">
+                <span class="year">一次性交清</span>
+            </div>
+        </div>
+    </div>
+    <!--选择受益人-->
+    <div class="choose-man">
+        <!--渲染-->
+    </div>
+    <!--立即预定-->
+    <div class="reserve">
+        <div class="price">
+            <span class="price-count">￥1,1550</span>
+            <span class="old-price">1,1600</span>
+        </div>
+        <a class="server" href="javascript: ; ">
+            <span class="iconfont icon-kefuzhongxin"></span>
+            <p>客服</p>
+        </a>
+        <div class="immediately">
+            立即预定
+        </div>
+    </div>
+    <!--产品特点介绍-->
+    <div class="trait">
+        <h5>产品特点介绍</h5>
+        <div class="matter">
+            <div class="matter-item">
+                <h4 class="matter-title">院前援助</h4>
+                <p class="method">受益人发出紧急援助需求后，根据受益人的需求指示，提供的院前援助服务。包括：</p>
+                <img src="../images/yuanqianyuanzhu.png" alt="" class="symbol">
+                <p class="details">1、应受益人需求，代为联系120急救中心；</p>
+                <p class="details">2、应受益人需求，代为联系出租出、网络预约车等第三方车辆；</p>
+                <p class="details">3、应受益人需求，派遣援助人员到指定地点陪同受益人就医。</p>
+            </div>
+            <div class="matter-item">
+                <h4 class="matter-title">院内陪诊</h4>
+                <p class="method">我们将指派专业的陪护人员为受益人提供院内陪诊服务。</p>
+
+                <div class="inside clearfloat">
+                    <div class="inside-item">
+                        <span>代为挂号</span>
+                        <span>陪同候诊</span>
+                        <span>代为缴费</span>
+                    </div>
+                    <div class="inside-item">
+                        <span>代为送检</span>
+                        <span>代取报告</span>
+                        <span>陪同诊断</span>
+                    </div>
+                    <div class="inside-item">
+                        <span>代为取药</span>
+                        <span>陪同治疗</span>
+                        <span>反馈治疗意见</span>
+                    </div>
+
+                </div>
+            </div>
+            <div class="matter-item">
+                <h4 class="matter-title">留院观察/住院陪护</h4>
+                <p class="method">指派专业的陪护人员为受益人免费提供24小时留院观察/住院陪护服务，包括翻身、补液看护、全身清洁、协助如厕、睡眠照料、口腔清洁、整理床铺等。</p>
+                <img src="../images/liuyuanhuli.png" alt="" class="symbol none-padding">
+            </div>
+        </div>
+    </div>
+
+    <!--日历-->
+    <div class="modal">
+        <div id="calendar" class="calendar"></div>
+    </div>
+
+</div>
+<script type="text/html" id="head">
+    <img src="../images/E护宝紧急救助保障@3x.png" alt="">
+    <h2>{{data.name}}</h2>
+    <p class="jk"><span>益护健康</span>| 销量<span>{{data.productInsure.salesVolume}}</span>份</p>
+    <button>购买</button>
+    <div class="text">
+        <p class=""><span style="color:#D8D8D8">● </span>24小时专业护理人员陪护护理</p>
+        <p class=""><span style="color:#D8D8D8">● </span>一键呼叫，智能终端定位，专业人员响应，全程陪诊</p>
+        <p class=""><span style="color:#D8D8D8">● </span>为认证用户提供紧急住院的现场钱款垫付</p>
+    </div>
+</script>
+<script type="text/html" id="content">
+    {{data.productInsure.special}}
+    <p class="clearfloat"><span class="c-left">5/8H电话医生服务</span> <span class="c-right">不记次数</span></p>
+</script>
+<script type="text/html" id="choose-man">
+    <p class="clearfloat">
+        <span class="man-left">受益人为本人</span>
+        <span class="man-right">选择其他受益人</span>
+    </p>
+    <div>
+        {{each data.infoList v i}}
+        <button>{{data.infoList[i].name}}</button>
+        {{/each}}
+    </div>
+
+    <div class="insurance-info-item">
+        <span class="name">被保人姓名</span>
+        <div class="item-right">
+            <span class="year compellation"></span>
+        </div>
+    </div>
+    <div class="insurance-info-item">
+        <span class="name">身份证号码</span>
+        <div class="item-right">
+            <span class="year idcard"></span>
+        </div>
+    </div>
+</script>
+<script src="../lib/template-web.js"></script>
+</body>
+</html>

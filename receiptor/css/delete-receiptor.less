@@ -1,0 +1,282 @@
+@import "../../css/common";
+
+.add-head {
+  width: 100%;
+  height: 354rem/@num;
+  background: linear-gradient(to right, #88B2DE, #A8D9EA);
+  padding-top: 30rem/@num;
+  padding-left: 25rem/@num;
+  box-sizing: border-box;
+  img {
+    width: 22rem/@num;
+    height: 40rem/@num;
+    float: left;
+    vertical-align: middle;
+  }
+  h3 {
+    font-size: 32rem/@num;
+    float: left;
+    font-weight: 500;
+    color: white;
+    margin-left: 47%;
+    transform: translateX(-50%);
+  }
+  .add {
+    margin-left: 50%;
+    margin-top: 80rem/@num;
+    width: 203rem/@num;
+    height: 202rem/@num;
+    border: 1px solid white;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    position: relative;
+    .upload {
+      width: 203rem/@num;
+      height: 202rem/@num;
+      border-radius: 50%;
+    }
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100rem/@num;
+      height: 80rem/@num;
+      transform: translateX(-50%) translateY(-50%);
+    }
+    #filed {
+      position: absolute;
+      right: 0;
+      width: 200rem/@num;
+      height: 200rem/@num;
+      opacity: 0;
+    }
+    .symbol {
+      color: white;
+      position: absolute;
+      right: 18rem/@num;
+      width: 40rem/@num;
+      height: 40rem/@num;
+      border-radius: 50%;
+      border: 1px solid white;
+      box-sizing: border-box;
+      text-align: center;
+      line-height: 35rem/@num;
+      font-size: 30rem/@num;
+      z-index: 999;
+      background-color: #88B2DE;
+    }
+  }
+}
+
+//基础信息
+.basic-info {
+  padding: 0 30rem/@num;
+  box-sizing: border-box;
+  color: #B4B4B5;
+  padding-top: 30rem/@num;
+  position: relative;
+  font-size: 28rem/@num;
+  > span {
+    position: absolute;
+    width: 240rem/@num;
+    height: 80rem/@num;
+    font-size: 26rem/@num;
+    line-height: 80rem/@num;
+    text-align: right;
+    right: 40rem/@num;
+  }
+  .name-info{
+    top: 30rem/@num;
+    left: 46%;
+    width: 20rem/@num;
+  }
+  .phone-info{
+    top: 230rem/@num;
+    right: 10rem/@num;
+  }
+  .id-verify {
+    top: 130rem/@num;
+  }
+  .photo-verify {
+    top: 230rem/@num;
+  }
+  input {
+    height: 80rem/@num !important;
+    border: 2rem/@num solid #E8E8E8 !important;
+    border-radius: 15rem/@num !important;
+    margin-bottom: 20rem/@num !important;
+    float: left !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    font-size: 28rem/@num !important;
+    padding: 20rem/@num !important;
+  }
+  .name {
+    width: 46% !important;
+  }
+  .sex {
+    box-sizing: border-box;
+    font-size: 28rem/@num;
+    padding-left: 20rem/@num;
+    width: 45%;
+    margin-left: 7%;
+    height: 80rem/@num;
+    line-height: 80rem/@num;
+    border: 2rem/@num solid #E8E8E8;
+    border-radius: 15rem/@num;
+    margin-bottom: 20rem/@num;
+    float: right;
+    color: #B4B4B5;
+    position: relative;
+    .option {
+      position: absolute;
+      left: 0;
+      background: white;
+      width: 100%;
+      padding-left: 20rem/@num;
+      box-sizing: border-box;
+      border: 1px solid #A3D2E8;
+      border-radius: 15rem/@num;
+      display: none;
+      z-index: 99;
+    }
+    .iconfont {
+      position: absolute;
+      right: 20rem/@num;
+    }
+  }
+  .relation {
+    box-sizing: border-box;
+    padding-left: 20rem/@num;
+    width:100%;
+    margin-left: 7%;
+    height: 80rem/@num;
+    line-height: 80rem/@num;
+    border: 2rem/@num solid #E8E8E8;
+    border-radius: 15rem/@num;
+    margin-bottom: 20rem/@num;
+    float: right;
+    color: #B4B4B5;
+    position: relative;
+    .option {
+      position: absolute;
+      left: 0;
+      background: white;
+      width: 100%;
+      padding-left: 20rem/@num;
+      box-sizing: border-box;
+      border: 1px solid #A3D2E8;
+      border-radius: 15rem/@num;
+      display: none;
+      z-index: 99;
+    }
+    .iconfont {
+      position: absolute;
+      right: 20rem/@num;
+    }
+  }
+  .address {
+    height: 200rem/@num;
+    border: 2rem/@num solid #E8E8E8;
+    border-radius: 15rem/@num;
+    margin-bottom: 20rem/@num;
+    float: left;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 28rem/@num;
+    padding: 20rem/@num;
+  }
+}
+
+//修改删除
+.info-amend {
+  box-sizing: border-box;
+  background: linear-gradient(to right, #88B2DE, #A8D9EA);
+  width: 60%;
+  height: 100rem/@num;
+  margin: 20rem/@num;
+  color: white;
+  font-size: 32rem/@num;
+  text-align: center;
+  line-height: 100rem/@num;
+  border-radius: 50rem/@num;
+  float: left;
+}
+
+.info-delete {
+  margin: 20rem/@num;
+  width: 30%;
+  height: 100rem/@num;
+  float: right;
+  line-height: 100rem/@num;
+  border-radius: 50rem/@num;
+  font-size: 32rem/@num;
+  background: #EEF3F8;
+  text-align: center;
+  color: #B4B4B5;
+}
+
+//删除默认受益人
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .3);
+  display: none;
+  .delete {
+    display: none;
+  }
+  .error {
+    display: none;
+  }
+  .amend {
+    display: none;
+  }
+  .hint {
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 508rem/@num;
+    height: 380rem/@num;
+    background-color: white;
+    border-radius: 10rem/@num;
+    padding-top: 30rem/@num;
+    padding: 20rem/@num;
+    box-sizing: border-box;
+    color: black;
+    .hint-top {
+      height: 70rem/@num;
+      border-bottom: 1rem/@num solid #eee;
+      line-height: 70rem/@num;
+      h5 {
+        font-weight: 500;
+        float: left;
+        font-size: 36rem/@num;
+      }
+      img {
+        margin-top: 10rem/@num;
+        width: 36rem/@num;
+        height: 36rem/@num;
+        float: right;
+      }
+    }
+    .hint-main {
+      font-size: 32rem/@num;
+      text-align: center;
+      line-height: 150rem/@num;
+    }
+    button {
+      width: 227rem/@num;
+      height: 61rem/@num;
+      border-radius: 20rem/@num;
+      background: white;
+      border: 1px solid #88B2DE;
+      line-height: 61rem/@num;
+      color: #88B2DE;
+      margin-left: 110rem/@num;
+    }
+  }
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,user-scalable=no"/>
+    <link rel="stylesheet" href="css/evaluate.css">
+    <link rel="stylesheet" href="../lib/icon/iconfont.css">
+    <script src="../js/common.js"></script>
+    <script src="../lib/jquery/jquery-3.1.1.min.js"></script>
+    <script src="js/evaluate.js"></script>
+    <title>我的评价</title>
+</head>
+<body>
+<div class="container">
+    <div class="evaluate-head">
+        <!--渲染-->
+    </div>
+    <!--主体-->
+    <div class="evaluate-main">
+        <!--渲染-->
+    </div>
+
+    <!--新标杆-->
+    <div class="tagline">
+        <h2>建立护理行业新标杆</h2>
+        <p>We Redefine Patients'</p>
+        <p>本平台由上海益护健康管理有限公司提供技术服务</p>
+    </div>
+</div>
+<script type="text/html" id="tpl">
+    {{each data.infoList value i}}
+    <div class="evaluate-item">
+        <div class="item-title">
+            <h3><span>{{data.infoList[i].groupPieceName}}</span></h3>
+            <div class="star">
+                <% for(let j=0;j<data.infoList[i].judgeLevel;j++){ %>
+                <span class="iconfont icon-xingxing"></span>
+                <% }; %>
+            </div>
+        </div>
+        <p class="time">{{data.infoList[i].payResultTime}}</p>
+        <p class="evaluate">{{data.infoList[i].judgeInfo}}</p>
+        <!--护工-->
+        {{each data.infoList[i].nurseAssessList value j}}
+        <div class="nursing">
+            <div class="nursing-title">
+                <h3><img src="../images/护工.png" alt="">&nbsp;<span>护工</span>：<span>{{data.infoList[i].nurseAssessList[j].nurseName}}</span></h3>
+                <div class="star">
+                    <% for(let l=0;l<data.infoList[i].nurseAssessList[j].assessLevel;l++){ %>
+                    <span class="iconfont icon-xingxing"></span>
+                    <% }; %>
+                </div>
+            </div>
+            <p>{{data.infoList[i].nurseAssessList[j].assessContent}}</p>
+        </div>
+        {{/each}}
+    </div>
+    {{/each}}
+</script>
+<script type="text/html" id="tpl2">
+    <a class="evaluate-arrow" href="javascript:history.back(-1)"> <span
+            class="iconfont icon-iconfontjiantou1"></span></a>
+    <img src="http://47.98.180.47:80/customerapi{{data.headImg}}" alt="">
+    <p>{{data.name}}<span>{{data.count}}</span>条评价</p>
+</script>
+<script src="../lib/template-web.js"></script>
+</body>
+</html>

@@ -1,0 +1,318 @@
+@import "../../css/common";
+html, body {
+  position: relative;
+  height: 100%;
+}
+
+.hidden {
+  overflow: hidden;
+}
+.derails-head {
+  width: 100%;
+  text-align: center;
+  position: relative;
+  height: 590rem/@num;
+  color: white;
+  img {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 396rem/@num;
+  }
+  h2 {
+    position: absolute;
+    font-size: 36rem/@num;
+    font-weight: 500;
+    left: 50%;
+    top: 50rem/@num;
+    transform: translateX(-50%);
+  }
+  .jk {
+    position: absolute;
+    font-size: 20rem/@num;
+    font-weight: 500;
+    left: 50%;
+    top: 150rem/@num;
+    transform: translateX(-50%);
+  }
+  button {
+    position: absolute;
+    font-size: 26rem/@num;
+    font-weight: 500;
+    left: 50%;
+    top: 250rem/@num;
+    transform: translateX(-50%);
+    color: black;
+    width: 320rem/@num;
+    height: 60rem/@num;
+    border-radius: 30rem/@num;
+    background: rgba(255, 255, 255, .7);
+    border: none;
+  }
+  .text {
+    position: absolute;
+    padding: 20rem/@num;
+    box-sizing: border-box;
+    bottom: 0;
+    width: 100%;
+    p {
+      font-size: 24rem/@num;
+      text-align: left;
+      line-height: 50rem/@num;
+      color: #4E4E4F;
+    }
+  }
+}
+
+//我的权益
+.my-equity {
+  background: #EEF3F8;
+  position: relative;
+  height: 95rem/@num;
+  color: white;
+  .equity-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #88B2DE;
+    width: 677rem/@num;
+    height: 85rem/@num;
+    bottom: 0;
+    font-size: 36rem/@num;
+    line-height: 85rem/@num;
+    img {
+      width: 36rem/@num;
+      height: 28rem/@num;
+      padding: 0 20rem/@num;
+    }
+  }
+
+  .right {
+    font-size: 20rem/@num;
+    float: right;
+    padding-right: 20rem/@num;
+  }
+}
+
+//详细
+.content {
+  padding: 40rem/@num;
+  padding-bottom: 20rem/@num;
+  box-sizing: border-box;
+  font-size: 26rem/@num;
+  line-height: 50rem/@num;
+  border-bottom: 1px solid #D8DEE1;
+  .c-left {
+    color: #B5B5B6;
+    float: left;
+  }
+  .c-right {
+    float: right;
+  }
+}
+
+
+.insurance-main {
+  padding: 0 40rem/@num;
+  box-sizing: border-box;
+  border-bottom: 20rem/@num solid #EEF3F8;
+  .insurance-info-item:first-child {
+    font-size: 28rem/@num;
+  }
+  .insurance-info-item:last-child {
+    border-bottom: none;
+  }
+  .insurance-info-item {
+    border-bottom: 1px solid #D8DEE1;
+    font-size: 26rem/@num;
+    height: 80rem/@num;
+    line-height: 80rem/@num;
+    box-sizing: border-box;
+    .name{
+      float: left;
+    }
+    .item-right {
+      float: right;
+      color: #BFBFC0;
+      font-size: 24rem/@num;
+      text-align: right;
+      box-sizing: border-box;
+      height: 100%;
+    }
+  }
+}
+.insurance-main.hidden{
+  height: 98rem/@num;
+  overflow: hidden;
+}
+
+//选择受益人
+.choose-man {
+  padding: 40rem/@num;
+  padding-top: 30rem/@num;
+  box-sizing: border-box;
+  .man-left {
+    font-size: 28rem/@num;
+    float: left;
+  }
+  .man-right {
+    font-size: 20rem/@num;
+    color: #BFBFC0;
+    float: right;
+  }
+  .now {
+    background: #EEF3F8;
+    color: #9EBFE3;
+    border: none;
+  }
+  button {
+    color: #A6B4BC;
+    border: 1px solid #A6B4BC;
+    border-radius: 20rem/@num;
+    width: 150rem/@num;
+    height: 50rem/@num;
+    background: white;
+  }
+  .insurance-info-item:last-child {
+    border-bottom: none;
+  }
+  .insurance-info-item {
+    border-bottom: 1px solid #D8DEE1;
+    font-size: 26rem/@num;
+    height: 80rem/@num;
+    line-height: 80rem/@num;
+    .item-right {
+      float: right;
+      color: #BFBFC0;
+    }
+  }
+}
+.choose-man.hidden{
+  height: 0;
+  overflow: hidden;
+}
+
+//产品特点介绍
+.trait {
+  color: #616162;
+  padding-bottom: 100rem/@num;
+  h5 {
+    text-align: center;
+    font-weight: 500;
+    font-size: 36rem/@num;
+    border-bottom: 1px solid #D8DEE1;
+    height: 80rem/@num;
+    line-height: 80rem/@num;
+  }
+  .matter {
+    padding: 0 40rem/@num;
+
+    box-sizing: border-box;
+    .matter-item {
+      margin-top: 50rem/@num;
+      .matter-title {
+        font-size: 28rem/@num;
+        padding-bottom: 20rem/@num;
+        color: #5F5F60;
+        font-weight: 700;
+      }
+      .method {
+        font-size: 26rem/@num;
+        line-height: 50rem/@num;
+      }
+      .symbol {
+        width: 100%;
+        padding: 30rem/@num 0;
+      }
+      .none-padding{
+        padding: 0;
+      }
+      .details {
+        font-size: 24rem/@num;
+        line-height: 40rem/@num;
+      }
+      .inside {
+        width: 100%;
+        color: #75BA88;
+        font-size: 26rem/@num;
+        padding: 30rem/@num 0;
+        .inside-item {
+          float: left;
+          width:25%;
+          margin-right: 70rem/@num;
+          span{
+            float: left;
+            line-height: 58rem/@num;
+          }
+        }
+        .inside-item:last-child{
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+//立即预定
+.reserve {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 100rem/@num;
+  box-shadow: 0 -3px 14px 0 rgba(56, 93, 142, 0.12);
+  .price {
+    width: 35%;
+    height: 100%;
+    border-right: 1px solid #EEF3F8;
+    padding-top: 10rem/@num;
+    padding-left: 10rem/@num;
+    box-sizing: border-box;
+    float: left;
+    background: #FFFFFF;
+    .price-count {
+      font-size: 36rem/@num;
+      text-decoration: none;
+    }
+    span {
+      color: #FF854F;
+      font-size: 36rem/@num;
+    }
+    .old-price {
+      font-size: 24rem/@num;
+      text-decoration: line-through;
+      color: #E8E8E8;
+    }
+  }
+
+  .server {
+    float: left;
+    text-align: center;
+    background: #FFFFFF;
+    position: relative;
+    width: 15%;
+    color: #7D919D;
+    height: 100%;
+    span {
+      font-size: 36rem/@num;
+    }
+    p {
+      position: absolute;
+      top: 53rem/@num;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 20rem/@num;
+    }
+  }
+
+  .immediately {
+    float: left;
+    height: 100%;
+    width: 50%;
+    background: linear-gradient(to right, #26C3BA, #82ECBB);
+    text-align: center;
+    color: white;
+    line-height: 100rem/@num;
+  }
+}
+

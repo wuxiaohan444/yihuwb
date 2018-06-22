@@ -1,0 +1,383 @@
+@import "../../css/common";
+
+.head {
+  width: 100%;
+  height: 255rem/@num;
+  padding-top: 30rem/@num;
+  box-sizing: border-box;
+  position: relative;
+  background: linear-gradient(to right, #88B2DE, #A8D9EA);
+  a {
+    position: absolute;
+    color: white;
+    left: 20rem/@num;
+  }
+  h3 {
+    text-align: center;
+    color: white;
+    font-weight: 500;
+    font-size: 26rem/@num;
+  }
+  .state {
+    width: 602rem/@num;
+    height: 100rem/@num;
+    margin: 40rem/@num auto;
+    color: white;
+    font-size: 26rem/@num;
+    position: relative;
+    .state-item {
+      position: absolute;
+      height: 100%;
+      .circle {
+        width: 50rem/@num;
+        height: 50rem/@num;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, .7);
+        position: relative;
+        .ing {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translateX(-50%) translateY(-50%);
+          width: 25rem/@num;
+          height: 25rem/@num;
+          border-radius: 50%;
+          border: 1px solid #ffffff;
+        }
+        .ing.now{
+          background: #FFFFFF;
+        }
+      }
+    }
+    i {
+      position: absolute;
+      display: inline-block;
+      height: 1px;
+      width: 495rem/@num;
+      background: white;
+      left: 52rem/@num;
+      top: 25rem/@num;
+    }
+    .server {
+      left: 50%;
+      transform: translateX(-50%);
+      background: #98c6e4;
+    }
+    .state-item:last-child {
+      right: 0;
+    }
+
+  }
+}
+
+//受益人信息
+.info-man {
+  background: white;
+  border-bottom: 20rem/@num solid #ebf1f7;
+  padding-bottom: 20rem/@num;
+  h2 {
+    font-weight: 500;
+    font-size: 32rem/@num;
+    padding-left: 20rem/@num;
+    box-sizing: border-box;
+    border: 1px solid #EEF3F8;
+    height: 80rem/@num;
+    line-height: 80rem/@num;
+  }
+  .man-bottom {
+    color: #929292;
+    font-size: 24rem/@num;
+    padding: 20rem/@num;
+    width: 100%;
+    box-sizing: border-box;
+    p {
+      float: left;
+      width: 37%;
+      line-height: 50rem/@num;
+    }
+    p:nth-child(odd) {
+      width: 63%;
+    }
+    p:last-child {
+      width: 100%;
+    }
+  }
+}
+
+//订单信息
+.info-order {
+  border-bottom: 20rem/@num solid #EEF3F8;
+  background: white;
+  h2 {
+    font-weight: 500;
+    font-size: 32rem/@num;
+    padding-left: 20rem/@num;
+    box-sizing: border-box;
+    border: 2rem/@num solid #EEF3F8;
+    height: 80rem/@num;
+    line-height: 80rem/@num;
+  }
+  .order-title {
+    padding: 0 20rem/@num;
+    box-sizing: border-box;
+    height: 64rem/@num;
+    .name {
+      float: left;
+      font-size: 24rem/@num;
+      color: #4E4E4F;
+    }
+    img {
+      width: 130rem/@num;
+      height: 40rem/@num;
+      padding-left: 10rem/@num;
+    }
+    p {
+      float: right;
+      font-size: 28rem/@num;
+      line-height: 64rem/@num;
+      color: #FF854F;
+      .old {
+        text-decoration: line-through;
+        color: #D8DEE1;
+      }
+    }
+  }
+  .order-bottom {
+    padding: 0 40rem/@num;
+    box-sizing: border-box;
+    .list {
+      font-size: 24rem/@num;
+      border-top: 2rem/@num solid #EEF3F8;
+      line-height: 64rem/@num;
+      .left {
+        float: left;
+        color: #929292;
+      }
+      .right {
+        float: right;
+      }
+    }
+  }
+  //查询订单评估表
+  .red-packet {
+    margin: 0;
+    width: 100%;
+    height: 136rem/@num;
+    box-sizing: border-box;
+    font-size: 26rem/@num;
+    border-top: 2rem/@num solid #EEF3F8;
+    color: #B4B4B5;
+    span {
+      height: 64rem/@num;
+      width: 242rem/@num;
+      float: right;
+      display: inline-block;
+      border-radius: 10rem/@num;
+      margin-top: 36rem/@num;
+      margin-right: 30rem/@num;
+      border: 1px solid #E8E8E8;
+      text-align: center;
+      line-height: 64rem/@num;
+    }
+  }
+}
+
+//订单编号
+.info-number {
+  padding-top: 30rem/@num;
+  padding-left: 20rem/@num;
+  box-sizing: border-box;
+  position: relative;
+  font-size: 24rem/@num;
+  background: white;
+  padding-bottom: 26rem/@num;
+  border-bottom: 20rem/@num solid #e9eff6;
+  P {
+    color: #B4B4B5;
+    line-height: 50rem/@num;
+    span {
+      color: #4E4E4F;
+    }
+  }
+  button {
+    position: absolute;
+    right: 20rem/@num;
+    top: 30rem/@num;
+    background: white;
+    color: #B4B4B5;
+    border: 1px solid #E8E8E8;
+    font-size: 24rem/@num;
+    padding: 3rem/@num 15rem/@num;
+    border-radius: 15rem/@num;
+  }
+}
+
+//产品
+.single-main {
+  width: 100%;
+  .product-title{
+    padding: 20rem/@num 30rem/@num;
+    padding-bottom: 0;
+    line-height: 44rem/@num;
+    h4{
+      font-size: 32rem/@num;
+      color:#33383D;
+      float: left;
+    }
+    .title-right{
+      float: right;
+      color: #B4B4B5;
+      .icon-shuaxin{
+        font-size: 20rem/@num;
+      }
+      .icon-shuaxin:before{
+        font-size: 36rem/@num;
+        vertical-align: middle;
+      }
+    }
+  }
+  .item {
+    padding: 30rem/@num;
+    padding-top: 35rem/@num;
+    width: 100%;
+    height: 201rem/@num;
+    border-bottom: 1px solid #EBF1F7;
+    box-sizing: border-box;
+    .radio {
+      float: left;
+      width: 40rem/@num;
+      height: 40rem/@num;
+      border-radius: 50%;
+      margin-top: 28rem/@num;
+      margin-right: 15rem/@num;
+      background: url("../../images/symbols-checkbox-null.png");
+      background-size: 40rem/@num 40rem/@num;
+      vertical-align: top;
+    }
+    .selected {
+      background: url("../../images/symbols-checkbox.png");
+      background-size: 40rem/@num 40rem/@num;
+    }
+    img {
+      width: 122rem/@num;
+      height: 122rem/@num;
+      border: 1px solid #EBF1F7;
+      border-radius: 10rem/@num;
+      float: left;
+      vertical-align: middle;
+      margin: 0 20rem/@num;
+    }
+    .name {
+      width: 230rem/@num;
+      height: 122rem/@num;
+      float: left;
+      padding: 10rem/@num;
+      box-sizing: border-box;
+      .label {
+        width: 38rem/@num;
+        height: 26rem/@num;
+        float: left;
+        font-size: 18rem/@num;
+        color: white;
+        border-radius: 5rem/@num;
+        text-align: center;
+        line-height: 28rem/@num;
+        margin-top: 5rem/@num;
+        margin-right: 5rem/@num;
+      }
+      .hot{
+        background: #CB86FE;
+      }
+      .rec{
+        background: #2EC6BA;
+      }
+      h3 {
+        font-size: 28rem/@num;
+        font-weight: 500;
+      }
+      p {
+        float: left;
+        font-size: 36rem/@num;
+        color: #FF854F;
+        .small {
+          font-size: 20rem/@num;
+        }
+      }
+    }
+    .num {
+      width: 210rem/@num;
+      height: 122rem/@num;
+      float: right;
+      padding-top: 15rem/@num;
+      box-sizing: border-box;
+      button {
+        font-size: 32rem/@num;
+        width: 48rem/@num;
+        height: 66rem/@num;
+        background: white;
+        border: 1px solid #ebebeb;
+        border-radius: 15rem/@num;
+        color: #4E4E4F;
+      }
+      input{
+        font-size: 32rem/@num;
+        height: 66rem/@num;
+        background: white;
+        border: 1px solid #ebebeb;
+        border-radius: 15rem/@num;
+        color: #4E4E4F;
+        text-align: center;
+      }
+      .now {
+        background: #F2F2F2;
+        color: #D2D2D2;
+      }
+      .count {
+        width: 72rem/@num;
+      }
+    }
+  }
+}
+
+//宣传语
+.tagline {
+  width: 100%;
+  height: 195rem/@num;
+  background-color: #EEF3F8;
+  color: #CFD6DB;
+  text-align: center;
+  padding: 20rem/@num;
+  margin-bottom: 100rem/@num;
+  h2 {
+    font-size: 36rem/@num;
+    font-weight: 500;
+    padding-top: 30rem/@num;
+  }
+  p {
+    font-size: 28rem/@num;
+    line-height: 50rem/@num;
+  }
+}
+
+//底部
+.foot {
+  a {
+    .icon-one {
+      background: url("../../images/bottom1.png");
+      background-size: 40rem/@num 40rem/@num;
+    }
+    .icon-two {
+      background: url("../../images/bottomcopy1.png");
+      background-size: 40rem/@num 40rem/@num;
+    }
+    .icon-three {
+      background: url("../../images/bottomcopy2.png");
+      background-size: 40rem/@num 40rem/@num;
+    }
+    .icon-five {
+      background: url("../../images/bottomcopy13.png");
+      background-size: 40rem/@num 40rem/@num;
+    }
+  }
+
+}

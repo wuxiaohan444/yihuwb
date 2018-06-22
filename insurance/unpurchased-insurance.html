@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,user-scalable=no" />
+    <link rel="stylesheet" href="css/unpurchased-insurance.css">
+    <link rel="stylesheet" href="../lib/icon/iconfont.css">
+    <script src="../lib/jquery/jquery-3.1.1.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="js/unpurchased-insurancel.js"></script>
+    <title>未购买保险页</title>
+</head>
+<body>
+<div class="container">
+    <!--主要内容-->
+    <div class="content clearfloat">
+        <!--渲染-->
+    </div>
+    <!--联系客服-->
+    <div class="server">
+        <span class="iconfont icon-kefuzhongxin"> </span><span>联系客服</span>
+    </div>
+    <!--底部-->
+    <div class="foot">
+        <a href="../index.html">
+            <div class="icon icon-one"></div>
+            <p class="text-one">首页</p>
+        </a>
+        <a href="../ehubao/have-bought.html">
+            <div class="icon icon-two"></div>
+            <p style="color:#88B2DE">e护社区</p>
+        </a>
+        <a href="../order/order-index.html">
+            <div class="icon icon-three"></div>
+            <p>订单</p>
+        </a>
+        <a href="../personage.html">
+            <div class="icon icon-five"></div>
+            <p>我的</p></a>
+    </div>
+</div>
+<script type="text/html" id="tpl">
+    <h3 class="title">热销健康保障</h3>
+    {{each data as value i}}
+    <a class="un-item" href="#">
+        <img src="../images/{{data.picPath}}" alt="">
+        <div class="un-item-bottom">
+            <p>{{data[i].name}}</p>
+            <span>￥</span><span>{{data[i].price}}</span><span class="qi"> 起</span>
+        </div>
+    </a>
+    {{/each}}
+</script>
+<script src="../lib/template-web.js"></script>
+</body>
+</html>
